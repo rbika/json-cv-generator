@@ -10,63 +10,70 @@
   margin: 60px auto;
   width: 800px;
 }
-.section {
-  margin-top: 30px;
-}
-.section h1 {
-  border-bottom: 1px solid #ddd;
-  font-size: 19px;
-  font-weight: 400;
-}
-.subsection {
-  margin-top: 15px;
-  padding: 0 20px;
-}
-.subsection h2 {
-  font-size: 14px;
-  font-weight: 500;
-  margin-bottom: 3px;
-  display: inline-block;
-}
-.subsection .time-period {
-  font-size: 12px;
-  font-weight: 400;
-  margin-left: 15px;
-}
-.subsection h3 {
-  font-size: 13px;
-  font-weight: 500;
-  margin-bottom: 3px;
-}
 
 /* ---------- Header ---------- */
-#header {
+.header {
   text-align: center;
 }
-#header h1 {
+.header__name {
   font-size: 28px;
   margin-bottom: 30px;
   font-weight: 400;
 }
-#header > div {
+.header__contact-info {
   display: inline-block;
   margin: 0 20px;
 }
-#header > div i {
+.header__icon {
   margin-right: 2px;
   font-size: 16px;
 }
 
-/* ---------- Skills ---------- */
-
-#skills-wrapper {
+/* ---------- Section ---------- */
+.section {
+  margin-top: 30px;
+}
+.section__title {
+  border-bottom: 1px solid #ddd;
+  font-size: 19px;
+  font-weight: 400;
+}
+.section__skills {
   padding: 10px 20px 0 20px;
 }
-.skill-item {
+.section__skill {
   padding: 5px 7px;
   display: inline-block;
   margin: 10px 9px 0 0;
   background-color: #ddd;
   border-radius: 4px;
   -webkit-print-color-adjust: exact;
+}
+.section__skill--skel {
+  display: none;
+}
+
+/* ---------- Subsection ---------- */
+.subsection {
+  margin-top: 15px;
+  padding: 0 20px;
+}
+.subsection--skel {
+  display: none;
+}
+.subsection__title {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 3px;
+  display: inline-block;
+}
+.subsection__time-period {
+  font-size: 12px;
+  font-weight: 400;
+  margin-left: 15px;
+}
+.subsection__subtitle {
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 3px;
 }

@@ -4,66 +4,63 @@
   <meta charset="UTF-8">
   <title>cv</title>
 
-  <!-- Roboto -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700">
-
-  <!-- Font awnsome -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-
-  <!-- CSS -->
   <link rel="stylesheet" href="static/main.css">
 </head>
 <body>
-  <!-- Page container -->
+
+  <!-- Note: the content of all elements which the class name start with "cv-" will be polulated via Javascript. -->
+
   <div id="container">
     <!-- Header -->
-    <div id="header">
-      <h1 id="cv-name"></h1>
-      <div class="contact-info"><i class="fa fa-phone"></i> <span id="cv-phone"></span></div>
-      <div class="contact-info"><i class="fa fa-envelope"></i> <span id="cv-email"></span></div>
-      <div class="contact-info"><i class="fa fa-map-marker"></i> <span id="cv-address"></span></div>
+    <div class="header">
+      <h1 class="header__name cv-name"></h1>
+      <div class="header__contact-info"><i class="header__icon fa fa-phone"></i> <span class="cv-phone"></span></div>
+      <div class="header__contact-info"><i class="header__icon fa fa-envelope"></i> <span class="cv-email"></span></div>
+      <div class="header__contact-info"><i class="header__icon fa fa-map-marker"></i> <span class="cv-address"></span></div>
     </div>
 
     <!-- Work experience -->
     <div id="experience-section" class="section">
-      <h1 class="section-title">Work Experience</h1>
+      <h1 class="section__title">Work Experience</h1>
 
-      <div id="experience-skel" class="subsection" style="display: none">
-        <h2 class="company"></h2>
-        <span class="time-period"></span>
-        <h3 class="position"></h3>
-        <p class="summary"></p>
+      <div class="subsection subsection--skel">
+        <h2 class="subsection__title cv-company"></h2>
+        <span class="subsection__time-period cv-time-period"></span>
+        <h3 class="subsection__subtitle cv-position"></h3>
+        <p class="subsection__summary cv-summary"></p>
       </div>
     </div>
 
     <!-- Education -->
     <div id="education-section" class="section">
-      <h1 class="section-title">Education</h1>
+      <h1 class="section__title">Education</h1>
 
-      <div id="education-skel" class="subsection" style="display: none">
-        <h2 class="institution"></h2>
-        <span class="time-period"></span>
-        <p class="area"></p>
+      <div class="subsection subsection--skel">
+        <h2 class="subsection__title cv-institution"></h2>
+        <span class="subsection__time-period cv-time-period"></span>
+        <p class="subsection__area cv-area"></p>
       </div>
     </div>
 
     <!-- Skills -->
     <div id="skills-section" class="section">
-      <h1 class="section-title">Skills</h1>
+      <h1 class="section__title">Skills</h1>
 
-      <div id="skills-wrapper">
-        <span id="skill-skel" class="skill-item" style="display: none"></span>
+      <div class="section__skills">
+        <span class="section__skill section__skill--skel"></span>
       </div>
     </div>
 
     <!-- Certificates -->
     <div id="certificates-section" class="section">
-      <h1 class="section-title">Certificates</h1>
+      <h1 class="section__title">Certificates</h1>
 
-      <div id="certificate-skel" class="subsection" style="display: none">
-        <h2 class="course"></h2>
-        <span class="time-period"></span>
-        <p class="institution"></p>
+      <div class="subsection subsection--skel">
+        <h2 class="subsection__title cv-course"></h2>
+        <span class="subsection__time-period cv-time-period"></span>
+        <p class="subsection__institurion cv-institution"></p>
       </div>
     </div>
   </div>

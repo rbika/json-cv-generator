@@ -1,68 +1,65 @@
 $(function() {
+  var $section, $skel, $item;
+
   // Basics
   // ------
+  $('.cv-name').text(data.basics.name);
+  $('.cv-phone').text(data.basics.phone);
+  $('.cv-email').text(data.basics.email);
+  $('.cv-address').text(data.basics.address);
 
-  $('#cv-name').text(data.basics.name);
-  $('#cv-phone').text(data.basics.phone);
-  $('#cv-email').text(data.basics.email);
-  $('#cv-address').text(data.basics.address);
-
-  // Experience
-  // ----------
+  // Work Experience
+  // ---------------
+  $section = $('#experience-section');
+  $skel = $section.find('.subsection--skel');
 
   data.experience.forEach(function(obj, index) {
-    var $section = $('#experience-section');
-    var $subsection = $('#experience-skel').clone();
-
-    $subsection.attr('id', 'experience-' + index).show();
-    $section.append($subsection);
-
-    $subsection.find('.company').text(obj.company);
-    $subsection.find('.time-period').text(obj.timePeriod);
-    $subsection.find('.position').text(obj.position);
-    $subsection.find('.summary').text(obj.summary);
+    $item = $skel.clone();
+    $section.append($item);
+    $item.find('.cv-company').text(obj.company);
+    $item.find('.cv-time-period').text(obj.timePeriod);
+    $item.find('.cv-position').text(obj.position);
+    $item.find('.cv-summary').text(obj.summary);
+    $item.removeClass('subsection--skel');
   });
 
   // Education
   // ---------
+  $section = $('#education-section');
+  $skel = $section.find('.subsection--skel').clone();
 
   data.education.forEach(function(obj, index) {
-    var $section = $('#education-section');
-    var $subsection = $('#education-skel').clone();
-
-    $subsection.attr('id', 'education-' + index).show();
-    $section.append($subsection);
-
-    $subsection.find('.institution').text(obj.institution);
-    $subsection.find('.time-period').text(obj.timePeriod);
-    $subsection.find('.area').text(obj.area);
+    $item = $skel.clone();
+    $section.append($item);
+    $item.find('.cv-institution').text(obj.institution);
+    $item.find('.cv-time-period').text(obj.timePeriod);
+    $item.find('.cv-area').text(obj.area);
+    $item.removeClass('subsection--skel');
   });
 
   // Skills
   // ------
+  $section = $('#skills-section');
+  $skel = $section.find('.section__skill--skel').clone();
 
   data.skills.forEach(function(text, index) {
-    var $wrapper = $('#skills-wrapper');
-    var $item = $('#skill-skel').clone();
-
-    $item.attr('id', 'skill-' + index).text(text).show();
-    $wrapper.append($item);
+    $item = $skel.clone();
+    $section.find('.section__skills').append($item);
+    $item.text(text);
+    $item.removeClass('section__skill--skel');
   });
 
   // Certificates
   // ------------
+  $section = $('#certificates-section');
+  $skel = $section.find('.subsection--skel');
 
   data.certificates.forEach(function(obj, index) {
-    var $section = $('#certificates-section');
-    var $subsection = $('#certificate-skel').clone();
-
-    $subsection.attr('id', 'certificate-' + index).show();
-    $section.append($subsection);
-
-    console.log(obj)
-
-    $subsection.find('.institution').text(obj.institution);
-    $subsection.find('.time-period').text(obj.timePeriod);
-    $subsection.find('.course').text(obj.course);
+    $item = $skel.clone();
+    $section.append($item);
+    $item.find('.cv-institution').text(obj.institution);
+    $item.find('.cv-time-period').text(obj.timePeriod);
+    $item.find('.cv-course').text(obj.course);
+    $item.removeClass('subsection--skel');
   });
 });
