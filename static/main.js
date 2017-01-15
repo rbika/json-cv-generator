@@ -3,10 +3,10 @@ $(function() {
 
   // Basics
   // ------
-  $('.cv-name').text(data.basics.name);
-  $('.cv-phone').text(data.basics.phone);
-  $('.cv-email').text(data.basics.email);
-  $('.cv-address').text(data.basics.address);
+  $('.js-name').text(data.basics.name);
+  $('.js-phone').text(data.basics.phone);
+  $('.js-email').text(data.basics.email);
+  $('.js-address').text(data.basics.address);
 
   // Work Experience
   // ---------------
@@ -16,10 +16,10 @@ $(function() {
   data.experience.forEach(function(obj, index) {
     $item = $skel.clone();
     $section.append($item);
-    $item.find('.cv-company').text(obj.company);
-    $item.find('.cv-time-period').text(obj.timePeriod);
-    $item.find('.cv-position').text(obj.position);
-    $item.find('.cv-summary').text(obj.summary);
+    $item.find('.js-company').text(obj.company);
+    $item.find('.js-time-period').text(obj.timePeriod);
+    $item.find('.js-position').text(obj.position);
+    $item.find('.js-summary').text(obj.summary);
     $item.removeClass('subsection--skel');
   });
 
@@ -31,22 +31,22 @@ $(function() {
   data.education.forEach(function(obj, index) {
     $item = $skel.clone();
     $section.append($item);
-    $item.find('.cv-institution').text(obj.institution);
-    $item.find('.cv-time-period').text(obj.timePeriod);
-    $item.find('.cv-area').text(obj.area);
+    $item.find('.js-institution').text(obj.institution);
+    $item.find('.js-time-period').text(obj.timePeriod);
+    $item.find('.js-area').text(obj.area);
     $item.removeClass('subsection--skel');
   });
 
   // Skills
   // ------
   $section = $('#skills-section');
-  $skel = $section.find('.section__skill--skel').clone();
+  $skel = $section.find('.section__skills__skill--skel').clone();
 
   data.skills.forEach(function(text, index) {
     $item = $skel.clone();
     $section.find('.section__skills').append($item);
     $item.text(text);
-    $item.removeClass('section__skill--skel');
+    $item.removeClass('section__skills__skill--skel');
   });
 
   // Certificates
@@ -57,9 +57,9 @@ $(function() {
   data.certificates.forEach(function(obj, index) {
     $item = $skel.clone();
     $section.append($item);
-    $item.find('.cv-institution').text(obj.institution);
-    $item.find('.cv-time-period').text(obj.timePeriod);
-    $item.find('.cv-course').text(obj.course);
+    $item.find('.js-institution').text(obj.institution);
+    $item.find('.js-time-period').text(obj.timePeriod);
+    $item.find('.js-course').text(obj.course);
     $item.removeClass('subsection--skel');
   });
 });

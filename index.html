@@ -10,26 +10,27 @@
 </head>
 <body>
 
-  <!-- Note: the content of all elements which the class name start with "cv-" will be polulated via Javascript. -->
+  <!-- Note: the content of all elements which the class name start with "js-" will be polulated via Javascript. -->
 
-  <div id="container">
-    <!-- Header -->
-    <div class="header">
-      <h1 class="header__name cv-name"></h1>
-      <div class="header__contact-info"><i class="header__icon fa fa-phone"></i> <span class="cv-phone"></span></div>
-      <div class="header__contact-info"><i class="header__icon fa fa-envelope"></i> <span class="cv-email"></span></div>
-      <div class="header__contact-info"><i class="header__icon fa fa-map-marker"></i> <span class="cv-address"></span></div>
-    </div>
+  <!-- Header -->
+  <div class="header">
+    <h1 class="header__name js-name"></h1>
+    <div class="header__contact-info"><i class="fa fa-phone"></i> <span class="js-phone"></span></div>
+    <div class="header__contact-info"><i class="fa fa-envelope"></i> <span class="js-email"></span></div>
+    <div class="header__contact-info"><i class="fa fa-map-marker"></i> <span class="js-address"></span></div>
+  </div>
 
+  <!-- Header -->
+  <div class="content">
     <!-- Work experience -->
     <div id="experience-section" class="section">
       <h1 class="section__title">Work Experience</h1>
 
       <div class="subsection subsection--skel">
-        <h2 class="subsection__title cv-company"></h2>
-        <span class="subsection__time-period cv-time-period"></span>
-        <h3 class="subsection__subtitle cv-position"></h3>
-        <p class="subsection__summary cv-summary"></p>
+        <h2 class="subsection__title js-company"></h2>
+        <span class="subsection__time-period js-time-period"></span>
+        <h3 class="subsection__subtitle js-position"></h3>
+        <p class="subsection__summary js-summary"></p>
       </div>
     </div>
 
@@ -38,9 +39,9 @@
       <h1 class="section__title">Education</h1>
 
       <div class="subsection subsection--skel">
-        <h2 class="subsection__title cv-institution"></h2>
-        <span class="subsection__time-period cv-time-period"></span>
-        <p class="subsection__area cv-area"></p>
+        <h2 class="subsection__title js-institution"></h2>
+        <span class="subsection__time-period js-time-period"></span>
+        <p class="subsection__area js-area"></p>
       </div>
     </div>
 
@@ -49,7 +50,7 @@
       <h1 class="section__title">Skills</h1>
 
       <div class="section__skills">
-        <span class="section__skill section__skill--skel"></span>
+        <span class="section__skills__skill section__skills__skill--skel"></span>
       </div>
     </div>
 
@@ -58,9 +59,9 @@
       <h1 class="section__title">Certificates</h1>
 
       <div class="subsection subsection--skel">
-        <h2 class="subsection__title cv-course"></h2>
-        <span class="subsection__time-period cv-time-period"></span>
-        <p class="subsection__institurion cv-institution"></p>
+        <h2 class="subsection__title js-course"></h2>
+        <span class="subsection__time-period js-time-period"></span>
+        <p class="subsection__institurion js-institution"></p>
       </div>
     </div>
   </div>
