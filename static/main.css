@@ -83,3 +83,7 @@ body {
   font-weight: 500;
   margin-bottom: 3px;
 }
+.subsection__summary > li {
+  margin-left: 16px;
+  width: 600px;
+}

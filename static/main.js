@@ -19,7 +19,11 @@ $(function() {
     $item.find('.js-company').text(obj.company);
     $item.find('.js-time-period').text(obj.timePeriod);
     $item.find('.js-position').text(obj.position);
-    $item.find('.js-summary').text(obj.summary);
+
+    obj.summary_list.forEach(function(li, index) {
+      $item.find('.js-summary').append($('<li>').text(li));
+    });
+
     $item.removeClass('subsection--skel');
   });
 
