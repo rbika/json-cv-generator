@@ -11,12 +11,12 @@ npm install
 
 2. Edit the `src/data.json` file
 
-3. Run the command to generate the CV:
+3. Run the local server:
 ```
-gulp
+npm run serve
 ```
 
-4. Open the generated file `cv.html` in your browser.
+4. Go to http://localhost:8080
 
 
 Example
