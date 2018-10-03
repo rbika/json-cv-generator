@@ -1,0 +1,7 @@
+<div *ngIf="!data">
+    <app-cv-loader (fileSelect)="onFileSelected($event)"></app-cv-loader>
+</div>
+
+<div *ngIf="data">
+    <pre>{{ data | json }}</pre>
+</div>
