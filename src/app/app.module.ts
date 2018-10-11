@@ -6,7 +6,7 @@ import { CvModule } from './cv/cv.module';
 
 @NgModule({
     declarations: [
-        AppComponent,
+        AppComponent
     ],
     imports: [
         BrowserModule,
