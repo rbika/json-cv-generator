@@ -16,7 +16,7 @@ export class CvLoaderComponent {
         const file = event.target.files[0];
 
         fileReader.onload = () => {
-            this.fileSelect.emit(JSON.parse(<string>fileReader.result));
+            this.fileSelect.emit(JSON.parse(<string>fileReader.result)); // send to service
             this.error = '';
         };
 
