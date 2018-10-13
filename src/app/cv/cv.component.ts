@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { CvService } from './cv.service';
+
 @Component({
     selector: 'app-cv',
     templateUrl: './cv.component.html',
@@ -9,7 +11,8 @@ export class CvComponent {
 
     data: any;
 
-    onFileSelected(data: any) {
-        this.data = data;
+    constructor(private cvService: CvService) {
+        this.data = this.cvService.getCv();
     }
+
 }

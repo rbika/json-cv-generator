@@ -1,4 +1,7 @@
 import { Component, Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { CvService } from '../cv.service';
 
 @Component({
   selector: 'app-cv-loader',
@@ -6,6 +9,11 @@ import { Component, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./cv-loader.component.css']
 })
 export class CvLoaderComponent {
+
+    constructor(
+        private cvService: CvService,
+        private router: Router
+    ) {}
 
     @Output() fileSelect: EventEmitter<string> = new EventEmitter();
     cvjson: string;
@@ -16,8 +24,9 @@ export class CvLoaderComponent {
         const file = event.target.files[0];
 
         fileReader.onload = () => {
-            this.fileSelect.emit(JSON.parse(<string>fileReader.result)); // send to service
             this.error = '';
+            this.router.navigate(['/cv']);
+            this.cvService.setCv(JSON.parse(<string>fileReader.result));
         };
 
         fileReader.onerror = () => {
@@ -26,4 +35,5 @@ export class CvLoaderComponent {
 
         fileReader.readAsText(file);
     }
+
 }
