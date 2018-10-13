@@ -3,8 +3,11 @@
         <div class="container">
             <h1 class="jumbotron-heading">How it works</h1>
             <p class="lead text-muted">Click on the button below to upload your JSON file.</p>
-            <!-- <a href="#" class="btn btn-primary my-2">Main call to action</a> -->
-            <input type="file" (change)="onFileSelected($event)">
+
+            <label class="btn btn-primary" for="file-selector">
+                <input id="file-selector" type="file" (change)="onFileSelected($event)" style="display:none;">
+                Choose File
+            </label>
         </div>
     </div>
 </div>
