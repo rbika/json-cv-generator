@@ -12,6 +12,7 @@ import { CvService } from './cv/cv.service';
 const appRoutes: Routes = [
     {path: '', component: CvLoaderComponent},
     {path: 'cv', component: CvComponent},
+    {path: '**', redirectTo: ''}
 ];
 
 @NgModule({
