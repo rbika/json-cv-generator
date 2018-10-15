@@ -18,6 +18,19 @@ ul {
   width: 700px;
 }
 
+/* ---------- Actions ---------- */
+.actions-container {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+@media print {
+    .actions-container {
+        display: none;
+    }
+}
+
 /* ---------- Header ---------- */
 .header__name {
   font-size: 42px;

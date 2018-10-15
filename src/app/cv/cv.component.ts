@@ -23,4 +23,8 @@ export class CvComponent {
         }
     }
 
+    saveAsPdf() {
+        window.print();
+    }
+
 }

@@ -1,6 +1,11 @@
 <div *ngIf="data">
     <div>
         <div class="container">
+            <!-- Actions -->
+            <div class="actions-container">
+                <button (click)="saveAsPdf()" class="btn btn-sm btn-outline-primary">Save as PDF</button>
+            </div>
+
             <!-- Basic info -->
             <div class="header">
                 <h1 class="header__name">{{ data.basics.name }}</h1>
