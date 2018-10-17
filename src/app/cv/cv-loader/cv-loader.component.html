@@ -2,11 +2,15 @@
     <div class="jumbotron text-center">
         <div class="container">
             <h1 class="jumbotron-heading">How it works</h1>
-            <p class="lead text-muted">Click on the button below to upload your JSON file.</p>
+            <ul class="instructions lead text-muted">
+                <li>1. <a href="/assets/cv.json" download>Click here</a> to download the starter JSON file.</li>
+                <li>2. Update the file with your personal data.</li>
+                <li>3. Click on the button below to upload.</li>
+            </ul>
 
             <label class="btn btn-primary" for="file-selector">
                 <input id="file-selector" type="file" (change)="onFileSelected($event)" style="display:none;">
-                Choose File
+                Upload File
             </label>
         </div>
     </div>
