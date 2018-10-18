@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
+import { Cv } from './cv.model';
 
 @Injectable()
 export class CvService {
 
-    cv: any;
+    cv: Cv;
 
     setCv(data: any) {
-        this.cv = data;
+        this.cv = new Cv(data);
     }
 
     getCv() {
