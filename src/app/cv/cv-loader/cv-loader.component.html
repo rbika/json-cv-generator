@@ -12,6 +12,8 @@
                 <input id="file-selector" type="file" (change)="onFileSelected($event)" style="display:none;">
                 Upload File
             </label>
+
+            <p class="error message text-danger">{{ error }}</p>
         </div>
     </div>
 </div>
