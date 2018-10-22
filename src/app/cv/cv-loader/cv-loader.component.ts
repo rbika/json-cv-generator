@@ -36,7 +36,8 @@ export class CvLoaderComponent {
         };
 
         fileReader.onerror = () => {
-            this.error = fileReader.error.message;
+            this.error = 'Error while reading the file. Please try again.';
+            fileReader.abort();
         };
 
         fileReader.readAsText(file);
