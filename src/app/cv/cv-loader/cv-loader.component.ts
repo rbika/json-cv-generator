@@ -26,7 +26,6 @@ export class CvLoaderComponent {
         fileReader.onload = () => {
             try {
                 const data: string = JSON.parse(<string>fileReader.result);
-
                 this.error = '';
                 this.router.navigate(['/cv']);
                 this.cvService.setCv(data);
@@ -41,6 +40,12 @@ export class CvLoaderComponent {
         };
 
         fileReader.readAsText(file);
+    }
+
+    onExampleClick() {
+        const data = require('../../../assets/example.json');
+        this.router.navigate(['/cv']);
+        this.cvService.setCv(data);
     }
 
 }

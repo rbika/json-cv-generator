@@ -1,19 +1,20 @@
 <div>
     <div class="jumbotron text-center">
-        <div class="container">
-            <h1 class="jumbotron-heading">How it works</h1>
-            <ul class="instructions lead text-muted">
-                <li>1. <a href="/assets/cv.json" download>Click here</a> to download the starter JSON file.</li>
-                <li>2. Update the file with your personal data.</li>
-                <li>3. Click on the button below to upload.</li>
-            </ul>
+        <h1 class="jumbotron-heading">Professional CV from a JSON file</h1>
+        <p class="instructions lead link" (click)="onExampleClick()">Click here to see an example</p>
 
-            <label class="btn btn-primary" for="file-selector">
-                <input id="file-selector" type="file" (change)="onFileSelected($event)" style="display:none;">
-                Upload File
-            </label>
+        <h2 class="jumbotron-heading mt-5">How to generate your CV</h2>
+        <ul class="instructions lead text-muted">
+            <li>1. <a href="/assets/cv.json" download>Click here</a> to download the starter JSON file.</li>
+            <li>2. Update the file with your personal data.</li>
+            <li>3. Click on the button below to upload.</li>
+        </ul>
 
-            <p class="error message text-danger">{{ error }}</p>
-        </div>
+        <label class="btn btn-primary" for="file-selector">
+            <input id="file-selector" type="file" (change)="onFileSelected($event)" style="display:none;">
+            Upload File
+        </label>
+
+        <p class="error message text-danger">{{ error }}</p>
     </div>
 </div>
