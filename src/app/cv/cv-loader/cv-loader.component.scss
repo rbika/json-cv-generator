@@ -1,0 +1,44 @@
+@import "~bootstrap/scss/bootstrap-grid.scss";
+
+.container {
+    font-size: 15px;
+    font-weight: 300;
+    padding: 30px 10px;
+
+    h1 {
+        font-size: 32px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .error-message {
+        font-size: 18px;
+        margin-top: 10px;
+    }
+
+    .link {
+        color: #007bff;
+        text-decoration: none;
+        cursor: pointer;
+
+        &:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+    }
+
+    @include media-breakpoint-up(sm) {
+        font-size: 20px;
+
+        h1 {
+            font-size: 40px;
+        }
+
+        h2 {
+            font-size: 32px;
+        }
+    }
+}
+

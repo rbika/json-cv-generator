@@ -6,7 +6,7 @@ import { CvService } from '../cv.service';
 @Component({
   selector: 'app-cv-loader',
   templateUrl: './cv-loader.component.html',
-  styleUrls: ['./cv-loader.component.css']
+  styleUrls: ['./cv-loader.component.scss']
 })
 export class CvLoaderComponent {
 
