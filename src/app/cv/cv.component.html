@@ -13,8 +13,14 @@
                 <div class="header__contact-info">{{ data.basics.email }}</div>
                 <div class="header__contact-info">{{ data.basics.address }}</div>
             </div>
-
             <div class="content">
+                <!-- Introduction -->
+                <div id="introduction-section" class="section" ng-if="data.introduction">
+                    <h1 class="section__title">Introduction</h1>
+                    <div *ngFor="let item of data.introduction;" class="subsection">
+                        <p class="subsection__area">{{ item }}</p>
+                    </div>
+                </div>
                 <!-- Work experience -->
                 <div id="experience-section" class="section">
                     <h1 class="section__title">{{ data.experience.sectionName }}</h1>
