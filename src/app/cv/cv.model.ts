@@ -1,5 +1,6 @@
 export class Cv {
     basics: Basics;
+    introduction: String[];
     experience: {
         sectionName: string;
         items: Experience[];
@@ -24,7 +25,7 @@ export class Cv {
     constructor(data: any) {
         // Basics
         this.basics = new Basics(data.basics);
-
+        this.introduction = data.introduction;
         // Experience
         this.experience = {
             sectionName: data.experience.sectionName,
