@@ -3,7 +3,12 @@
         <div class="container">
             <!-- Actions -->
             <div class="actions-container">
-                <button (click)="saveAsPdf()" class="btn btn-sm btn-outline-primary">Save as PDF</button>
+                <button
+                    class="btn btn-sm btn-outline-primary"
+                    (click)="saveAsPdf()"
+                >
+                    Save as PDF
+                </button>
             </div>
 
             <!-- Basic info -->
@@ -11,68 +16,133 @@
                 <h1 class="header__name">{{ data.basics.name }}</h1>
                 <div class="header__contact-info">{{ data.basics.phone }}</div>
                 <div class="header__contact-info">{{ data.basics.email }}</div>
-                <div class="header__contact-info">{{ data.basics.address }}</div>
+                <div class="header__contact-info">
+                    {{ data.basics.address }}
+                </div>
             </div>
             <div class="content">
                 <!-- Introduction -->
-                <div id="introduction-section" class="section" ng-if="data.introduction">
+                <div
+                    id="introduction-section"
+                    class="section"
+                    ng-if="data.introduction"
+                >
                     <h1 class="section__title">Introduction</h1>
-                    <div *ngFor="let item of data.introduction;" class="subsection">
+                    <div
+                        *ngFor="let item of data.introduction"
+                        class="subsection"
+                    >
                         <p class="subsection__area">{{ item }}</p>
                     </div>
                 </div>
                 <!-- Work experience -->
                 <div id="experience-section" class="section">
-                    <h1 class="section__title">{{ data.experience.sectionName }}</h1>
+                    <h1 class="section__title">
+                        {{ data.experience.sectionName }}
+                    </h1>
 
-                    <div *ngFor="let item of data.experience.items; let i = index" class="subsection">
+                    <div
+                        *ngFor="
+                            let item of data.experience.items;
+                            let i = index
+                        "
+                        class="subsection"
+                    >
                         <h2 class="subsection__title">{{ item.company }}</h2>
-                        <span class="subsection__time-period">{{ item.timePeriod }}</span>
-                        <h3 class="subsection__subtitle">{{ item.position }}</h3>
+                        <span class="subsection__time-period">{{
+                            item.timePeriod
+                        }}</span>
+                        <h3 class="subsection__subtitle">
+                            {{ item.position }}
+                        </h3>
                         <ul class="subsection__summary">
-                            <li *ngFor="let subitem of item.summaryList; let i = index">{{ subitem }}</li>
+                            <li
+                                *ngFor="
+                                    let subitem of item.summaryList;
+                                    let i = index
+                                "
+                            >
+                                {{ subitem }}
+                            </li>
                         </ul>
                     </div>
                 </div>
 
                 <!-- Education -->
                 <div id="education-section" class="section">
-                    <h1 class="section__title">{{ data.education.sectionName }}</h1>
+                    <h1 class="section__title">
+                        {{ data.education.sectionName }}
+                    </h1>
 
-                    <div *ngFor="let item of data.education.items; let i = index" class="subsection">
-                        <h2 class="subsection__title">{{ item.institution }}</h2>
-                        <span class="subsection__time-period">{{ item.timePeriod }}</span>
+                    <div
+                        *ngFor="let item of data.education.items; let i = index"
+                        class="subsection"
+                    >
+                        <h2 class="subsection__title">
+                            {{ item.institution }}
+                        </h2>
+                        <span class="subsection__time-period">{{
+                            item.timePeriod
+                        }}</span>
                         <p class="subsection__area">{{ item.field }}</p>
                     </div>
                 </div>
 
                 <!-- Skills -->
                 <div id="skills-section" class="section">
-                    <h1 class="section__title">{{ data.skills.sectionName }}</h1>
+                    <h1 class="section__title">
+                        {{ data.skills.sectionName }}
+                    </h1>
 
                     <div class="section__skills">
-                        <span *ngFor="let skill of data.skills.items; let i = index" class="section__skills__skill">{{ skill }}</span>
+                        <span
+                            *ngFor="
+                                let skill of data.skills.items;
+                                let i = index
+                            "
+                            class="section__skills__skill"
+                            >{{ skill }}</span
+                        >
                     </div>
                 </div>
 
                 <!-- Certifications -->
                 <div id="certificates-section" class="section">
-                    <h1 class="section__title">{{ data.certifications.sectionName }}</h1>
+                    <h1 class="section__title">
+                        {{ data.certifications.sectionName }}
+                    </h1>
 
-                    <div *ngFor="let item of data.certifications.items; let i = index" class="subsection">
+                    <div
+                        *ngFor="
+                            let item of data.certifications.items;
+                            let i = index
+                        "
+                        class="subsection"
+                    >
                         <h2 class="subsection__title">{{ item.course }}</h2>
-                        <span class="subsection__time-period">{{ item.timePeriod }}</span>
-                        <p class="subsection__institurion">{{ item.institution }}</p>
+                        <span class="subsection__time-period">{{
+                            item.timePeriod
+                        }}</span>
+                        <p class="subsection__institurion">
+                            {{ item.institution }}
+                        </p>
                     </div>
                 </div>
 
                 <!-- Languages -->
                 <div id="languages-section" class="section">
-                    <h1 class="section__title">{{ data.languages.sectionName }}</h1>
+                    <h1 class="section__title">
+                        {{ data.languages.sectionName }}
+                    </h1>
 
-                    <div *ngFor="let item of data.languages.items; let i = index" class="subsection">
+                    <div
+                        *ngFor="let item of data.languages.items; let i = index"
+                        class="subsection"
+                    >
                         <h2 class="subsection__title">{{ item.language }}</h2>
-                        <p class="subsection__institurion">{{ item.proficiency }}</p>
+                        <p class="subsection__institurion">
+                            {{ item.proficiency }}
+                        </p>
                     </div>
                 </div>
             </div>
