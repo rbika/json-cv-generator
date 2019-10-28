@@ -24,12 +24,13 @@
                     {{ data.basics.address }}
                 </div>
             </div>
+
             <div class="content">
                 <!-- Introduction -->
                 <div
                     id="introduction-section"
                     class="section"
-                    ng-if="data.introduction"
+                    *ngIf="data.introduction"
                 >
                     <h1 class="section__title">Introduction</h1>
                     <div
@@ -39,6 +40,7 @@
                         <p class="subsection__area">{{ item }}</p>
                     </div>
                 </div>
+
                 <!-- Work experience -->
                 <div id="experience-section" class="section">
                     <h1 class="section__title">

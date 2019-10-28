@@ -6,6 +6,9 @@
         "phone": "650-555-5000",
         "address": "Los Angeles, USA"
     },
+    "introduction": [
+        "Seasoned Software Engineer, problem solver and great team player"
+    ],
     "experience": {
         "sectionName": "Experience",
         "items": [
