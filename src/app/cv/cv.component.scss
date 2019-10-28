@@ -24,6 +24,16 @@ ul {
     margin-top: 15px;
     display: flex;
     justify-content: center;
+
+    a {
+        cursor: pointer;
+        color: var(--blue);
+        margin-right: 10px;
+
+        &:hover {
+            color: white;
+        }
+    }
 }
 
 @media print {
