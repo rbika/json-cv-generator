@@ -1,0 +1,82 @@
+{
+  "basics": {
+    "name": "(Your name)",
+    "label": "(Job title)",
+    "email": "(your@email.com)",
+    "phone": "(555-5555)",
+    "address": "(Your address)"
+  },
+  "experience": {
+    "sectionName": "Experience",
+    "items": [
+      {
+        "company": "(Company 1 name)",
+        "position": "(Your position)",
+        "timePeriod": "(From) - Present",
+        "summaryList": [
+          "(Acomplishment 1)",
+          "(Acomplishment 2)",
+          "(Acomplishment 3)"
+        ]
+      },
+      {
+        "company": "(Company 2 name)",
+        "position": "(Your position)",
+        "timePeriod": "(From) - (To)",
+        "summaryList": [
+          "(Acomplishment 1)",
+          "(Acomplishment 2)",
+          "(Acomplishment 3)"
+        ]
+      }
+    ]
+  },
+  "education": {
+    "sectionName": "Education",
+    "items": [
+      {
+        "institution": "(Institution name)",
+        "field": "(Degree / Field of study)",
+        "timePeriod": "(From) - (To)"
+      }
+    ]
+  },
+  "skills": {
+    "sectionName": "Skills",
+    "items": [
+        "(Skill 1)",
+        "(Skill 2)",
+        "(Skill 3)",
+        "(Skill 4)",
+        "(Skill 5)"
+    ]
+  },
+  "certifications": {
+    "sectionName": "Certifications",
+    "items": [
+      {
+        "course": "(Course 1 name)",
+        "institution": "(Institution)",
+        "timePeriod": "(From) - (To)"
+      },
+      {
+        "course": "(Course 2 name)",
+        "institution": "(Institution)",
+        "timePeriod": "(From) - (To)"
+      }
+    ]
+  },
+  "languages": {
+    "sectionName": "Languages",
+    "items": [
+      {
+        "language": "(Language 1)",
+        "proficiency": "(Proficiency)"
+      },
+      {
+        "language": "(Language 2)",
+        "proficiency": "(Proficiency)"
+      }
+    ]
+  }
+}
