@@ -5,6 +5,8 @@ import Form from 'react-bootstrap/Form'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
+import UploadCvButton from '../UploadCvButton'
+
 export default function ActionBar({ onFontChange }) {
   return (
     <Row
@@ -45,9 +47,7 @@ export default function ActionBar({ onFontChange }) {
           marginBottom: '1rem',
         }}
       >
-        {/* <Button size="sm" css={{ marginRight: '1rem' }}>
-          Upload new file
-        </Button>*/}
+        <UploadCvButton label="Upload new file" />
         <Button size="sm" onClick={() => window.print()}>
           Save as PDF
         </Button>

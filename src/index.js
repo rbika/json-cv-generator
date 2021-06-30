@@ -2,10 +2,13 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
+import { CvProvider } from './contexts/cv-context'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <CvProvider>
+      <App />
+    </CvProvider>
   </React.StrictMode>,
   document.getElementById('root')
 )

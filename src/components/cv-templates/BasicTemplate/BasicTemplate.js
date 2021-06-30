@@ -5,9 +5,7 @@ import { FaRegEnvelope, FaMobileAlt, FaMapMarkerAlt } from 'react-icons/fa'
 import Section from './Section'
 import * as S from './BasicTemplate.styles'
 
-import cv from './data.json' // Temporary
-
-export default function BasicTemplate({ font }) {
+export default function BasicTemplate({ font, cv }) {
   const { basicInfo, summary, skills, certifications, education, experience } =
     cv
 
@@ -56,9 +54,9 @@ export default function BasicTemplate({ font }) {
       {/* Experience */}
       {!!experience?.data.length && (
         <Section title={experience.sectionTitle}>
-          {experience.data.map((item) => {
+          {experience.data.map((item, index) => {
             return (
-              <div>
+              <div key={index}>
                 <S.Subtitle>
                   {item.company}
                   <span
@@ -74,8 +72,8 @@ export default function BasicTemplate({ font }) {
                 </S.Subtitle>
                 <S.SubSubtitle>{item.timePeriod}</S.SubSubtitle>
                 <ul css={{ listStyle: 'none', padding: '0' }}>
-                  {item.details.map((detail) => {
-                    return <li>{detail}</li>
+                  {item.details.map((detail, index) => {
+                    return <li key={index}>{detail}</li>
                   })}
                 </ul>
               </div>
@@ -87,9 +85,9 @@ export default function BasicTemplate({ font }) {
       {/* Education */}
       {!!education?.data.length && (
         <Section title={education.sectionTitle}>
-          {education.data.map((item) => {
+          {education.data.map((item, index) => {
             return (
-              <div>
+              <div key={index}>
                 <S.Subtitle>{item.institution}</S.Subtitle>
                 <S.SubSubtitle>{item.timePeriod}</S.SubSubtitle>
                 <p>{item.field}</p>
@@ -102,14 +100,14 @@ export default function BasicTemplate({ font }) {
       {/* Certifications */}
       {!!certifications?.data.length && (
         <Section title={certifications.sectionTitle}>
-          {certifications.data.map((item) => {
+          {certifications.data.map((item, index) => {
             return (
-              <>
+              <div key={index}>
                 <S.Subtitle>{item.course}</S.Subtitle>
                 <S.SubSubtitle>
                   {item.institution} - {item.timePeriod}
                 </S.SubSubtitle>
-              </>
+              </div>
             )
           })}
         </Section>

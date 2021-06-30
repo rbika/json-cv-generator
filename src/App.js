@@ -1,7 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
-import './assets/styles.css'
-import Home from './pages/HomePage'
-import Resume from './pages/ResumePage'
+import './index.css'
+import HomePage from './pages/HomePage'
+import CvPage from './pages/CvPage'
 import { Router } from '@reach/router'
 import Header from './components/Header'
 
@@ -10,8 +10,8 @@ function App() {
     <>
       <Header />
       <Router>
-        <Home path="/" />
-        <Resume path="/cv" />
+        <HomePage path="/" />
+        <CvPage path="/cv" />
       </Router>
     </>
   )

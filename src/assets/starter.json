@@ -16,13 +16,13 @@
         "company": "Company name",
         "position": "Your position",
         "timePeriod": "From - Present (X years Y months)",
-        "details": ["Acomplishment 1", "Acomplishment 2", "Acomplishment 3"]
+        "details": ["Details", "More details"]
       },
       {
         "company": "Company name",
         "position": "Your position",
         "timePeriod": "From - To (X years Y months)",
-        "details": ["Acomplishment 1", "Acomplishment 2", "Acomplishment 3"]
+        "details": ["Details", "More details"]
       }
     ]
   },
@@ -30,28 +30,28 @@
     "sectionName": "Education",
     "items": [
       {
-        "institution": "(Institution name)",
-        "field": "(Degree / Field of study)",
-        "timePeriod": "(From) - (To)"
+        "institution": "Institution name",
+        "field": "Degree / Field of study",
+        "timePeriod": "From - To"
       }
     ]
   },
   "skills": {
     "sectionName": "Skills",
-    "items": ["(Skill 1)", "(Skill 2)", "(Skill 3)", "(Skill 4)", "(Skill 5)"]
+    "items": ["Skill 1", "Skill 2", "Skill 3", "Skill 4", "Skill 5"]
   },
   "certifications": {
     "sectionName": "Certifications",
     "items": [
       {
-        "course": "(Course 1 name)",
-        "institution": "(Institution)",
-        "timePeriod": "(From) - (To)"
+        "course": "Course name",
+        "institution": "Institution",
+        "timePeriod": "From - To"
       },
       {
-        "course": "(Course 2 name)",
-        "institution": "(Institution)",
-        "timePeriod": "(From) - (To)"
+        "course": "Course name",
+        "institution": "Institution",
+        "timePeriod": "From - To"
       }
     ]
   },
@@ -59,12 +59,12 @@
     "sectionName": "Languages",
     "items": [
       {
-        "language": "(Language 1)",
-        "proficiency": "(Proficiency)"
+        "language": "Language",
+        "proficiency": "Proficiency"
       },
       {
-        "language": "(Language 2)",
-        "proficiency": "(Proficiency)"
+        "language": "Language",
+        "proficiency": "Proficiency"
       }
     ]
   }
