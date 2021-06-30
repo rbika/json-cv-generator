@@ -8,10 +8,13 @@
       "location": "Your address"
     }
   },
-  "summary": "Summary",
+  "summary": {
+    "sectionTitle": "Summary",
+    "data": "Summary..."
+  },
   "experience": {
-    "sectionName": "Experience",
-    "items": [
+    "sectionTitle": "Experience",
+    "data": [
       {
         "company": "Company name",
         "position": "Your position",
@@ -27,8 +30,8 @@
     ]
   },
   "education": {
-    "sectionName": "Education",
-    "items": [
+    "sectionTitle": "Education",
+    "data": [
       {
         "institution": "Institution name",
         "field": "Degree / Field of study",
@@ -37,12 +40,12 @@
     ]
   },
   "skills": {
-    "sectionName": "Skills",
-    "items": ["Skill 1", "Skill 2", "Skill 3", "Skill 4", "Skill 5"]
+    "sectionTitle": "Skills",
+    "data": ["Skill 1", "Skill 2", "Skill 3", "Skill 4", "Skill 5"]
   },
   "certifications": {
-    "sectionName": "Certifications",
-    "items": [
+    "sectionTitle": "Certifications",
+    "data": [
       {
         "course": "Course name",
         "institution": "Institution",
@@ -56,8 +59,8 @@
     ]
   },
   "languages": {
-    "sectionName": "Languages",
-    "items": [
+    "sectionTitle": "Languages",
+    "data": [
       {
         "language": "Language",
         "proficiency": "Proficiency"
