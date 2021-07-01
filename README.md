@@ -16,7 +16,9 @@ NodeJS v14 or higher is required.
   ```
 
 - Start the development server:
+
   ```
   npm start
   ```
+
 - Go to http://localhost:3000/.

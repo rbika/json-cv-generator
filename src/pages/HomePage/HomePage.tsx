@@ -13,7 +13,7 @@ export default function HomePage(_props: RouteComponentProps): JSX.Element {
       <Row>
         <Col xs={8}>
           <div>
-            <h2 css={{ fontWeight: 300 }}>Professional CVs from JSON</h2>
+            <h2 css={{ fontWeight: 300 }}>Professional CVs from JSON files</h2>
             <Instructions />
           </div>
         </Col>
