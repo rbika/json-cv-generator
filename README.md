@@ -10,12 +10,13 @@ NodeJS v14 or higher is required.
 
 - Clone the repository.
 - Install the dependencies:
+
   ```
   npm install
   ```
 
-* Start the development server:
+- Start the development server:
   ```
   npm start
   ```
-* Go to http://localhost:3000/.
+- Go to http://localhost:3000/.
