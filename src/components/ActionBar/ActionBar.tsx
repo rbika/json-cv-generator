@@ -1,4 +1,4 @@
-/** @jsxImportSource @emotion/react */
+// /** @jsxImportSource @emotion/react */
 
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
@@ -6,8 +6,19 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
 import UploadCvButton from '../UploadCvButton'
+import { ICvFont } from '../../types/cv-font'
+import { RowProps } from 'react-bootstrap'
 
-export default function ActionBar({ onFontChange }) {
+type ActionBarProps = {
+  onFontChange: (val: ICvFont) => void
+} & RowProps
+
+const fontOptions: ICvFont[] = ['Roboto', 'Inconsolata']
+
+export default function ActionBar({
+  onFontChange,
+  ...rowProps
+}: ActionBarProps): JSX.Element {
   return (
     <Row
       css={{
@@ -16,6 +27,7 @@ export default function ActionBar({ onFontChange }) {
           display: 'none',
         },
       }}
+      {...rowProps}
     >
       <Col xs={3}>
         <Form.Row>
@@ -24,10 +36,11 @@ export default function ActionBar({ onFontChange }) {
             <Form.Control
               as="select"
               size="sm"
-              onChange={(e) => onFontChange(e.target.value)}
+              onChange={(e) => onFontChange(e.target.value as ICvFont)}
             >
-              <option value="Roboto">Roboto</option>
-              <option value="Inconsolata">Inconsolata</option>
+              {fontOptions.map((font: ICvFont) => (
+                <option value={font}>{font}</option>
+              ))}
             </Form.Control>
           </Form.Group>
           {/* <Form.Group as={Col} controlId="formGridTemplate">

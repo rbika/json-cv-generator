@@ -5,7 +5,7 @@ import CvPage from './pages/CvPage'
 import { Router } from '@reach/router'
 import Header from './components/Header'
 
-function App() {
+function App(): JSX.Element {
   return (
     <>
       <Header />

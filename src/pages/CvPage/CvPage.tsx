@@ -7,10 +7,12 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
 import ActionBar from '../../components/ActionBar'
-import Cv from '../../components/cv-templates/Cv'
+import Cv from '../../components/Cv/Cv'
+import { RouteComponentProps } from '@reach/router'
+import { ICvFont } from '../../types/cv-font'
 
-export default function CvPage() {
-  const [font, setFont] = React.useState('Roboto')
+export default function CvPage(_props: RouteComponentProps): JSX.Element {
+  const [font, setFont] = React.useState<ICvFont>('Roboto')
 
   return (
     <Container>

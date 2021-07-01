@@ -4,8 +4,18 @@ import { FaRegEnvelope, FaMobileAlt, FaMapMarkerAlt } from 'react-icons/fa'
 
 import Section from './Section'
 import * as S from './BasicTemplate.styles'
+import { ICvFont } from '../../../types/cv-font'
+import { ICv } from '../../../types/cv'
 
-export default function BasicTemplate({ font, cv }) {
+type BasicTemplateProps = {
+  font: ICvFont
+  cv: ICv
+}
+
+export default function BasicTemplate({
+  font,
+  cv,
+}: BasicTemplateProps): JSX.Element {
   const { basicInfo, summary, skills, certifications, education, experience } =
     cv
 
@@ -61,7 +71,7 @@ export default function BasicTemplate({ font, cv }) {
                   {item.company}
                   <span
                     css={{
-                      fontWeight: '400',
+                      fontWeight: 'normal',
                       fontSize: '0.875rem',
                       margin: '0 0.5rem',
                     }}
@@ -72,7 +82,7 @@ export default function BasicTemplate({ font, cv }) {
                 </S.Subtitle>
                 <S.SubSubtitle>{item.timePeriod}</S.SubSubtitle>
                 <ul css={{ listStyle: 'none', padding: '0' }}>
-                  {item.details.map((detail, index) => {
+                  {item.details.map((detail: string, index: number) => {
                     return <li key={index}>{detail}</li>
                   })}
                 </ul>

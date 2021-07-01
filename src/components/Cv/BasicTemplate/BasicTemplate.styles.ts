@@ -11,11 +11,11 @@ export const Subtitle = styled.h3({
   alignItems: 'center',
   margin: 0,
   fontSize: '1rem',
-  fontWeight: '700',
+  fontWeight: 'bold',
   marginBottom: '0.5rem',
 })
 
 export const SubSubtitle = styled.h4({
   fontSize: '0.875rem',
-  fontWeight: '400',
+  fontWeight: 'normal',
 })

@@ -1,16 +1,20 @@
 /** @jsxImportSource @emotion/react */
 
+import React from 'react'
 import { navigate } from '@reach/router'
+
 import UploadCvButton from '../UploadCvButton'
 import json from '../../assets/starter.json'
 
-export default function Instructions() {
+export default function Instructions(
+  props: React.HTMLAttributes<HTMLDivElement>
+): JSX.Element {
   const jsonHref = `data:text/json;charset=utf-8,${encodeURIComponent(
     JSON.stringify(json)
   )}`
 
   return (
-    <div>
+    <div {...props}>
       <ol css={{ paddingLeft: '1rem' }}>
         <li>
           <a href={jsonHref} download="starter.json">

@@ -1,13 +1,11 @@
 /** @jsxImportSource @emotion/react */
 
-import PropTypes from 'prop-types'
-
-const propTypes = {
-  title: PropTypes.string,
-  children: PropTypes.node,
+type SectionProps = {
+  title?: string
+  children: React.ReactNode
 }
 
-function Section({ title, children }) {
+function Section({ title, children }: SectionProps): JSX.Element {
   return (
     <div css={{ marginBottom: '1.5rem' }}>
       {title && (
@@ -15,7 +13,7 @@ function Section({ title, children }) {
           css={{
             borderBottom: '1px solid #bdbdbd',
             fontSize: '1.25rem',
-            fontWeight: '400',
+            fontWeight: 'normal',
             paddingBottom: '0.25rem',
           }}
         >
@@ -26,6 +24,5 @@ function Section({ title, children }) {
     </div>
   )
 }
-Section.propTypes = propTypes
 
 export default Section

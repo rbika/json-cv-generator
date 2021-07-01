@@ -1,25 +1,24 @@
 /** @jsxImportSource @emotion/react */
 
 import Button from 'react-bootstrap/Button'
-import PropTypes from 'prop-types'
 
-import { useCv } from '../../contexts/cv-context'
+import { useCv } from '../../contexts/CvContext'
 
-const propTypes = {
-  label: PropTypes.string.isRequired,
-  onUpload: PropTypes.func,
+type UploadCvButtonProps = {
+  label: string
+  onUpload?: () => void
 }
 
-function UploadCvButton({ label, onUpload }) {
+function UploadCvButton({ label, onUpload }: UploadCvButtonProps): JSX.Element {
   const { setCv } = useCv()
 
-  function handleCvLoad(event) {
+  function handleCvLoad(event: any) {
     const file = event.target.files[0]
     const fileReader = new FileReader()
 
     fileReader.onload = () => {
       try {
-        setCv(JSON.parse(fileReader.result))
+        setCv(JSON.parse(fileReader.result as string))
 
         if (onUpload) {
           onUpload()
@@ -54,6 +53,5 @@ function UploadCvButton({ label, onUpload }) {
     </Button>
   )
 }
-UploadCvButton.propTypes = propTypes
 
 export default UploadCvButton

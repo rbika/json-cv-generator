@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
-import { CvProvider } from './contexts/cv-context'
+import { CvProvider } from './contexts/CvContext'
 
 ReactDOM.render(
   <React.StrictMode>
