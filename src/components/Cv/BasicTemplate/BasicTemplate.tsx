@@ -4,25 +4,19 @@ import { FaRegEnvelope, FaMobileAlt, FaMapMarkerAlt } from 'react-icons/fa'
 
 import Section from './Section'
 import * as S from './BasicTemplate.styles'
-import { ICvFont } from '../../../types/cv-font'
 import { ICv } from '../../../types/cv'
 
 type BasicTemplateProps = {
-  font: ICvFont
   cv: ICv
 }
 
-export default function BasicTemplate({
-  font,
-  cv,
-}: BasicTemplateProps): JSX.Element {
+export default function BasicTemplate({ cv }: BasicTemplateProps): JSX.Element {
   const { basicInfo, summary, skills, certifications, education, experience } =
     cv
 
   return (
     <div
       css={{
-        fontFamily: font,
         fontSize: '0.875rem',
         marginBottom: '4rem',
       }}

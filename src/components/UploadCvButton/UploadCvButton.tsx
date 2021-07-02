@@ -41,10 +41,9 @@ function UploadCvButton({ label, onUpload }: UploadCvButtonProps): JSX.Element {
 
         if (onUpload) {
           await sleep(500)
-          setLoading(false)
-
           onUpload()
         }
+        setLoading(false)
       } catch (e) {
         event.target.value = null
         setLoading(false)
@@ -62,12 +61,7 @@ function UploadCvButton({ label, onUpload }: UploadCvButtonProps): JSX.Element {
   }
 
   return (
-    <S.UploadButton
-      as="label"
-      htmlFor="cv-file-input"
-      size="sm"
-      loading={loading}
-    >
+    <S.UploadButton as="label" htmlFor="cv-file-input" size="sm" busy={loading}>
       {loading && (
         <Spinner
           as="span"

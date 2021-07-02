@@ -17,8 +17,6 @@ function AlertProvider({ children }: AlertProviderProps) {
   const [alert, setAlert] = React.useState<IAlert | null>(null)
   const value = { alert, setAlert }
 
-  console.log(alert)
-
   return <AlertContext.Provider value={value}>{children}</AlertContext.Provider>
 }
 
