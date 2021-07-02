@@ -1,31 +1,35 @@
 {
   "basicInfo": {
-    "data": {
-      "name": "Your name",
-      "jobTitle": "Job title",
-      "email": "your@email.com",
-      "phone": "555-5555",
-      "location": "Your address"
-    }
+    "name": "John Doe",
+    "jobTitle": "Software engineer",
+    "email": "johndoe@email.com",
+    "phone": "555-5555",
+    "location": "San Fracisco, CA"
   },
   "summary": {
     "sectionTitle": "Summary",
-    "data": "Summary..."
+    "data": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eleifend bibendum molestie. Pellentesque sit amet lobortis quam. Suspendisse vitae eleifend augue, a faucibus tortor. Donec lacus quam, porttitor quis odio vel, accumsan consectetur lorem. In enim lacus, posuere a auctor eget, tincidunt non nibh."
   },
   "experience": {
     "sectionTitle": "Experience",
     "data": [
       {
-        "company": "Company name",
-        "position": "Your position",
-        "timePeriod": "From - Present (X years Y months)",
-        "details": ["Details", "More details"]
+        "company": "Google",
+        "position": "Software engineer",
+        "timePeriod": "Jul 2020 - Present (1 year, 2 months)",
+        "details": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi porttitor neque ex, vitae tincidunt purus consectetur.",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sollicitudin nisi ut diam vestibulum iaculis."
+        ]
       },
       {
-        "company": "Company name",
-        "position": "Your position",
-        "timePeriod": "From - To (X years Y months)",
-        "details": ["Details", "More details"]
+        "company": "Facebook",
+        "position": "Software engineer",
+        "timePeriod": "Jan, 2018 - Jun, 2020 (2 years, 5 months)",
+        "details": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi porttitor neque ex, vitae tincidunt purus consectetur.",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sollicitudin nisi ut diam vestibulum iaculis."
+        ]
       }
     ]
   },
@@ -33,28 +37,23 @@
     "sectionTitle": "Education",
     "data": [
       {
-        "institution": "Institution name",
-        "field": "Degree / Field of study",
-        "timePeriod": "From - To"
+        "institution": "Stanford University",
+        "field": "Computer Science",
+        "timePeriod": "2013 - 2017"
       }
     ]
   },
   "skills": {
     "sectionTitle": "Skills",
-    "data": ["Skill 1", "Skill 2", "Skill 3", "Skill 4", "Skill 5"]
+    "data": ["Programming", "Software development", "Web development", "Agile Methodologies"]
   },
   "certifications": {
     "sectionTitle": "Certifications",
     "data": [
       {
-        "course": "Course name",
-        "institution": "Institution",
-        "timePeriod": "From - To"
-      },
-      {
-        "course": "Course name",
-        "institution": "Institution",
-        "timePeriod": "From - To"
+        "course": "Professional Scrum Master",
+        "institution": "scrum.org",
+        "timePeriod": "2018"
       }
     ]
   },
@@ -62,12 +61,12 @@
     "sectionTitle": "Languages",
     "data": [
       {
-        "language": "Language",
-        "proficiency": "Proficiency"
+        "language": "English",
+        "proficiency": "Native"
       },
       {
-        "language": "Language",
-        "proficiency": "Proficiency"
+        "language": "Spanish",
+        "proficiency": "Professional working proficiency"
       }
     ]
   }
