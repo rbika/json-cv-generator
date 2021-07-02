@@ -1,3 +1,5 @@
+/** @jsxImportSource @emotion/react */
+
 import { useCv } from '../../contexts/CvContext'
 import BasicTemplate from './BasicTemplate'
 import { ICvFont } from '../../types/cv-font'
@@ -16,7 +18,7 @@ function Cv({ font, template }: CvProps) {
       {template === 'Basic' && <BasicTemplate cv={cv} />}
     </div>
   ) : (
-    <></>
+    null
   )
 }
 
