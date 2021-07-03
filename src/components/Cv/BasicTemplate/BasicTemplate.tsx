@@ -56,7 +56,7 @@ export default function BasicTemplate({ cv }: BasicTemplateProps): JSX.Element {
       )}
 
       {/* Experience */}
-      {!!experience?.data.length && (
+      {experience?.data.length && (
         <Section title={experience.sectionTitle}>
           {experience.data.map((item, index) => {
             return (
@@ -87,7 +87,7 @@ export default function BasicTemplate({ cv }: BasicTemplateProps): JSX.Element {
       )}
 
       {/* Education */}
-      {!!education?.data.length && (
+      {education?.data.length && (
         <Section title={education.sectionTitle}>
           {education.data.map((item, index) => {
             return (
@@ -102,7 +102,7 @@ export default function BasicTemplate({ cv }: BasicTemplateProps): JSX.Element {
       )}
 
       {/* Certifications */}
-      {!!certifications?.data.length && (
+      {certifications?.data.length && (
         <Section title={certifications.sectionTitle}>
           {certifications.data.map((item, index) => {
             return (

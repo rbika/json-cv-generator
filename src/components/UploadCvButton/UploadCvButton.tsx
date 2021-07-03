@@ -3,8 +3,8 @@
 import * as React from 'react'
 
 import Spinner from 'react-bootstrap/Spinner'
-import { useAlert } from '../../contexts/AlertContext'
 
+import { useAlert } from '../../contexts/AlertContext'
 import { useCv } from '../../contexts/CvContext'
 import { sleep } from '../../utils'
 import * as S from './UploadCvButton.styles'

@@ -2,13 +2,13 @@
 
 import React from 'react'
 
+import { RouteComponentProps } from '@reach/router'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
 import ActionBar from '../../components/ActionBar'
 import Cv from '../../components/Cv/Cv'
-import { RouteComponentProps } from '@reach/router'
 import { ICvFont } from '../../types/cv-font'
 import { ICvTemplate } from '../../types/cv-template'
 

@@ -1,5 +1,6 @@
 // /** @jsxImportSource @emotion/react */
 
+import { RowProps } from 'react-bootstrap'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import Row from 'react-bootstrap/Row'
@@ -8,7 +9,6 @@ import Col from 'react-bootstrap/Col'
 import UploadCvButton from '../UploadCvButton'
 import { ICvFont } from '../../types/cv-font'
 import { ICvTemplate } from '../../types/cv-template'
-import { RowProps } from 'react-bootstrap'
 
 type ActionBarProps = {
   onFontChange: (val: ICvFont) => void
