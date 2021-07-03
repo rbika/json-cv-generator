@@ -74,7 +74,7 @@ export default function ActionBar({
           marginBottom: '1rem',
         }}
       >
-        <UploadCvButton label="Upload new file" />
+        <UploadCvButton />
         <Button size="sm" onClick={() => window.print()}>
           Save as PDF
         </Button>

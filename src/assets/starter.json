@@ -16,7 +16,7 @@
       {
         "company": "Google",
         "position": "Software engineer",
-        "timePeriod": "Jul 2020 - Present (1 year 2 months)",
+        "timePeriod": "Jul 2020 - Present • (1 year 2 months)",
         "details": [
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi porttitor neque ex, vitae tincidunt purus consectetur.",
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sollicitudin nisi ut diam vestibulum iaculis."
@@ -25,7 +25,7 @@
       {
         "company": "Facebook",
         "position": "Software engineer",
-        "timePeriod": "Jan, 2018 - Jun, 2020 (2 years 5 months)",
+        "timePeriod": "Jan, 2018 - Jun, 2020 • (2 years 5 months)",
         "details": [
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi porttitor neque ex, vitae tincidunt purus consectetur.",
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sollicitudin nisi ut diam vestibulum iaculis."
@@ -38,7 +38,7 @@
     "data": [
       {
         "institution": "Stanford University",
-        "field": "Computer Science",
+        "field": "B.S. in Computer Science",
         "timePeriod": "2013 - 2017"
       }
     ]

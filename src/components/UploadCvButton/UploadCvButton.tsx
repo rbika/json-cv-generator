@@ -10,12 +10,11 @@ import { sleep } from '../../utils'
 import * as S from './UploadCvButton.styles'
 
 type UploadCvButtonProps = {
-  label: string
   onUpload?: () => void
 }
 
-function UploadCvButton({ label, onUpload }: UploadCvButtonProps): JSX.Element {
-  const { setCv } = useCv()
+function UploadCvButton({ onUpload }: UploadCvButtonProps): JSX.Element {
+  const { cv, setCv } = useCv()
   const { setAlert } = useAlert()
   const [loading, setLoading] = React.useState(false)
 
@@ -35,12 +34,11 @@ function UploadCvButton({ label, onUpload }: UploadCvButtonProps): JSX.Element {
     fileReader.onload = async function () {
       try {
         setLoading(true)
-        await sleep(500)
+        await sleep(1000)
 
         setCv(JSON.parse(fileReader.result as string))
 
         if (onUpload) {
-          await sleep(500)
           onUpload()
         }
         setLoading(false)
@@ -70,7 +68,7 @@ function UploadCvButton({ label, onUpload }: UploadCvButtonProps): JSX.Element {
           css={{ marginRight: '0.5rem' }}
         />
       )}
-      {label}
+      {cv ? 'Upload new file' : 'Upload file'}
       <input
         type="file"
         id="cv-file-input"

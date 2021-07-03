@@ -26,7 +26,7 @@ export default function Instructions(
         <li>Click on the button below to upload.</li>
       </ol>
 
-      <UploadCvButton label="Upload file" onUpload={() => navigate('/cv')} />
+      <UploadCvButton onUpload={() => navigate('/cv')} />
     </div>
   )
 }

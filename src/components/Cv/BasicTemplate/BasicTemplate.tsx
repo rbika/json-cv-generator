@@ -11,8 +11,15 @@ type BasicTemplateProps = {
 }
 
 export default function BasicTemplate({ cv }: BasicTemplateProps): JSX.Element {
-  const { basicInfo, summary, skills, certifications, education, experience } =
-    cv
+  const {
+    basicInfo,
+    summary,
+    skills,
+    languages,
+    certifications,
+    education,
+    experience,
+  } = cv
 
   return (
     <div
@@ -93,8 +100,10 @@ export default function BasicTemplate({ cv }: BasicTemplateProps): JSX.Element {
             return (
               <div key={index}>
                 <S.Subtitle>{item.institution}</S.Subtitle>
-                <S.SubSubtitle>{item.timePeriod}</S.SubSubtitle>
-                <p>{item.field}</p>
+                <S.SubSubtitle>
+                  {item.field} • {item.timePeriod}
+                </S.SubSubtitle>
+                <p></p>
               </div>
             )
           })}
@@ -109,7 +118,7 @@ export default function BasicTemplate({ cv }: BasicTemplateProps): JSX.Element {
               <div key={index}>
                 <S.Subtitle>{item.course}</S.Subtitle>
                 <S.SubSubtitle>
-                  {item.institution} - {item.timePeriod}
+                  {item.institution} • {item.timePeriod}
                 </S.SubSubtitle>
               </div>
             )
@@ -120,7 +129,30 @@ export default function BasicTemplate({ cv }: BasicTemplateProps): JSX.Element {
       {/* Skills */}
       {skills?.data.length && (
         <Section title={skills.sectionTitle}>
-          <p>{skills.data.join(' • ')}</p>
+          <div css={{ display: 'flex' }}>
+            {skills.data.map((skill) => (
+              <S.Skill>{skill}</S.Skill>
+            ))}
+          </div>
+        </Section>
+      )}
+
+      {/* Languages */}
+      {languages?.data.length && (
+        <Section title={languages.sectionTitle}>
+          {languages.data.map((item, index) => {
+            return (
+              <div
+                key={index}
+                css={{ display: 'flex', alignItems: 'baseline' }}
+              >
+                <S.Subtitle css={{ marginRight: '0.5rem' }}>
+                  {item.language}
+                </S.Subtitle>
+                <S.SubSubtitle>{item.proficiency}</S.SubSubtitle>
+              </div>
+            )
+          })}
         </Section>
       )}
     </div>
