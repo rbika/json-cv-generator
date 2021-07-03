@@ -22,3 +22,17 @@ NodeJS v14 or higher is required.
   ```
 
 - Go to http://localhost:3000/.
+
+## Contributing with a CV template
+
+- Choose a name for the template and add it to the `/src/types/cv-templates.ts` file
+
+- Update the select input options by add your template to the variable `templateOptions` in the `/src/components/ActionBar/ActionBar.tsx` file
+
+- Create a new template component inside `/src/components/Cv`
+
+- Add a new line in the `/src/components/Cv/Cv.tsx` file:
+
+  ```
+  {template === 'NewTemplateName' && <NewTemplate cv={cv} />}
+  ```
