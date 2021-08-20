@@ -82,7 +82,7 @@ export default function BasicTemplate({ cv }: BasicTemplateProps): JSX.Element {
                   {item.position}
                 </S.Subtitle>
                 <S.SubSubtitle>{item.timePeriod}</S.SubSubtitle>
-                <ul css={{ listStyle: 'none', padding: '0' }}>
+                <ul css={{ paddingLeft: '1rem' }}>
                   {item.details.map((detail: string, index: number) => {
                     return <li key={index}>{detail}</li>
                   })}
@@ -131,7 +131,7 @@ export default function BasicTemplate({ cv }: BasicTemplateProps): JSX.Element {
         <Section title={skills.sectionTitle}>
           <div css={{ display: 'flex' }}>
             {skills.data.map((skill) => (
-              <S.Skill>{skill}</S.Skill>
+              <S.Skill key={skill}>{skill}</S.Skill>
             ))}
           </div>
         </Section>
