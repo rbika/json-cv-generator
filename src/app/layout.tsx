@@ -10,8 +10,8 @@ import { cn } from '@/utils/common'
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' })
 
 export const metadata: Metadata = {
-  title: 'Nextjs Starter',
-  description: 'Nextjs Starter Project',
+  title: 'JSON CV Generator',
+  description: 'Generate professional CVs from JSON files.',
 }
 
 const RootLayout = ({
