@@ -11,7 +11,7 @@ const Header = () => {
       <Container className="flex h-full items-center">
         <Link href={paths.home()} className="flex items-center gap-2">
           <BracesIcon className="size-6" />
-          <h1 className="text-xl font-bold">CV Generator</h1>
+          <span className="text-xl font-bold">CV Generator</span>
         </Link>
       </Container>
     </nav>

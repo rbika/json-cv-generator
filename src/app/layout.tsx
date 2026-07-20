@@ -5,6 +5,7 @@ import './globals.css'
 
 import { Header } from '@/components/header'
 import { ThemeProvider } from '@/components/theme-provider'
+import { Toaster } from '@/components/ui/sonner'
 import { cn } from '@/utils/common'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' })
@@ -31,6 +32,7 @@ const RootLayout = ({
           <Header />
           <main className="my-12 pt-px font-sans">{children}</main>
         </ThemeProvider>
+        <Toaster />
       </body>
     </html>
   )
