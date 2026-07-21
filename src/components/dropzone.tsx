@@ -1,11 +1,16 @@
 'use client'
 
+import { useRouter } from 'next/navigation'
+
 import { useDropzone } from 'react-dropzone'
 import { toast } from 'sonner'
 
-import { cn } from '@/utils/common'
+import { cn } from '@/utils/cn'
+import { saveCV } from '@/utils/cv-store'
+import { paths } from '@/utils/paths'
 
 function Dropzone() {
+  const router = useRouter()
   const { getRootProps, getInputProps, isDragAccept, isDragReject } =
     useDropzone({
       accept: { 'application/json': [] },
@@ -21,9 +26,8 @@ function Dropzone() {
 
     try {
       const data = JSON.parse(fileContent)
-      // TODO: show data in the UI
-      console.log(data)
-      toast.success('JSON file uploaded successfully.')
+      saveCV(data)
+      router.push(paths.cv())
     } catch {
       toast.error('Invalid JSON file. Please try again.')
     }

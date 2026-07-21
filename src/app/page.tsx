@@ -20,7 +20,7 @@ const STEPS = [
   },
 ] as const
 
-const HomePage = () => {
+function HomePage() {
   return (
     <Container className="mt-5 space-y-12">
       <section className="space-y-6">

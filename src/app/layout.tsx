@@ -6,7 +6,7 @@ import './globals.css'
 import { Header } from '@/components/header'
 import { ThemeProvider } from '@/components/theme-provider'
 import { Toaster } from '@/components/ui/sonner'
-import { cn } from '@/utils/common'
+import { cn } from '@/utils/cn'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' })
 

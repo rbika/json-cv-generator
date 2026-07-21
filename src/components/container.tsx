@@ -1,4 +1,4 @@
-import { cn } from '@/utils/common'
+import { cn } from '@/utils/cn'
 
 const Container = ({ className, ...props }: React.ComponentProps<'div'>) => {
   return (
