@@ -4,6 +4,7 @@ import { useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 
 import { Container } from '@/components/container'
+import { CVBasic } from '@/components/cv-basic'
 import { useCV } from '@/utils/cv-store'
 import { paths } from '@/utils/paths'
 
@@ -20,8 +21,8 @@ function CVPage() {
   if (!data) return null
 
   return (
-    <Container>
-      <pre>{JSON.stringify(data, null, 2)}</pre>
+    <Container className="mt-5">
+      <CVBasic />
     </Container>
   )
 }
