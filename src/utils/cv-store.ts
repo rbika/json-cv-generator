@@ -14,21 +14,19 @@ function emitChange() {
 // useSyncExternalStore contract
 // -----------------------------
 
-const store = {
-  subscribe(listener: () => void) {
-    listeners.add(listener)
-    return () => {
-      listeners.delete(listener)
-    }
-  },
+function subscribe(listener: () => void) {
+  listeners.add(listener)
+  return () => {
+    listeners.delete(listener)
+  }
+}
 
-  getSnapshot() {
-    return cv
-  },
+function getSnapshot() {
+  return cv
+}
 
-  getServerSnapshot() {
-    return null
-  },
+function getServerSnapshot() {
+  return null
 }
 
 // Actions
@@ -48,11 +46,7 @@ function clearCV() {
 // ----
 
 function useCV() {
-  return useSyncExternalStore(
-    store.subscribe,
-    store.getSnapshot,
-    store.getServerSnapshot,
-  )
+  return useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot)
 }
 
 export { saveCV, clearCV, useCV }
