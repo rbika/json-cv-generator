@@ -4,10 +4,19 @@
     "jobTitle": "Software engineer",
     "email": "johndoe@email.com",
     "phone": "555-5555",
-    "location": "San Fracisco, CA",
-    "linkedin": "https://www.linkedin.com/in/john-doe",
-    "github": "https://github.com/john-doe",
-    "website": "https://www.john-doe.com"
+    "location": "San Francisco, CA, USA",
+    "linkedin": {
+      "label": "linkedin.com/in/john-doe",
+      "url": "https://www.linkedin.com/in/john-doe"
+    },
+    "github": {
+      "label": "github.com/john-doe",
+      "url": "https://github.com/john-doe"
+    },
+    "website": {
+      "label": "john-doe.com",
+      "url": "https://www.john-doe.com"
+    }
   },
   "summary": {
     "sectionTitle": "Summary",
@@ -16,10 +25,14 @@
   "skills": {
     "sectionTitle": "Technical Skills",
     "data": [
-      "Programming",
-      "Software development",
-      "Web development",
-      "Agile Methodologies"
+      {
+        "category": "Languages",
+        "skills": ["JavaScript", "TypeScript", "Python"]
+      },
+      {
+        "category": "Frameworks",
+        "skills": ["React", "Next.js", "Django", "Flask"]
+      }
     ]
   },
   "experience": {
@@ -28,7 +41,8 @@
       {
         "company": "Google",
         "position": "Software engineer",
-        "timePeriod": "Jul 2020 - Present • (1 year 2 months)",
+        "timePeriod": "Jul 2020 - Present",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi porttitor neque ex, vitae tincidunt purus consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sollicitudin nisi ut diam vestibulum iaculis.",
         "details": [
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi porttitor neque ex, vitae tincidunt purus consectetur.",
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sollicitudin nisi ut diam vestibulum iaculis."
@@ -37,7 +51,8 @@
       {
         "company": "Facebook",
         "position": "Software engineer",
-        "timePeriod": "Jan, 2018 - Jun, 2020 • (2 years 5 months)",
+        "timePeriod": "Jan 2018 - Jun 2020",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi porttitor neque ex, vitae tincidunt purus consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sollicitudin nisi ut diam vestibulum iaculis.",
         "details": [
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi porttitor neque ex, vitae tincidunt purus consectetur.",
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sollicitudin nisi ut diam vestibulum iaculis."

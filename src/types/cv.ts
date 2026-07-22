@@ -1,12 +1,17 @@
+export interface BasicInfoItem {
+  label: string
+  url?: string
+}
+
 export interface BasicInfo {
   name: string
   jobTitle: string
   email: string
   phone?: string
   location?: string
-  linkedin?: string
-  github?: string
-  website?: string
+  linkedin?: BasicInfoItem
+  github?: BasicInfoItem
+  website?: BasicInfoItem
 }
 
 export interface Summary {
@@ -14,9 +19,14 @@ export interface Summary {
   data: string
 }
 
+export interface SkillItem {
+  category: string
+  skills: string[]
+}
+
 export interface Skills {
   sectionTitle: string
-  data: string[]
+  data: SkillItem[]
 }
 
 export interface Experience {
@@ -25,6 +35,7 @@ export interface Experience {
     company: string
     position: string
     timePeriod: string
+    description: string
     details: string[]
   }[]
 }
