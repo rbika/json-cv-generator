@@ -11,7 +11,7 @@ import { cn } from '@/utils/cn'
 import { useCV } from '@/utils/cv-store'
 
 const sectionTitleClasses = 'border-b border-gray-500 mb-2 text-lg'
-const sectionContentClasses = 'text-sm dark:text-gray-300 text-gray-700'
+const sectionContentClasses = 'text-sm text-gray-700'
 
 function CVBasic() {
   const cv = useCV()

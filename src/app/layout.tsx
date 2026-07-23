@@ -4,7 +4,6 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 
 import { Header } from '@/components/header'
-import { ThemeProvider } from '@/components/theme-provider'
 import { Toaster } from '@/components/ui/sonner'
 import { cn } from '@/utils/cn'
 
@@ -27,15 +26,8 @@ const RootLayout = ({
       className={cn('font-sans', inter.variable)}
     >
       <body className={cn('font-sans antialiased', inter.variable)}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Header />
-          <main className="my-12 pt-px font-sans">{children}</main>
-        </ThemeProvider>
+        <Header />
+        <main className="my-12 pt-px font-sans">{children}</main>
         <Toaster />
       </body>
     </html>
