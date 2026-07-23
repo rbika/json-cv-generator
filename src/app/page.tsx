@@ -16,7 +16,7 @@ const STEPS = [
   {
     title: 'Upload and generate',
     description:
-      'Upload your completed file to preview the CV, then print or export it as a PDF.',
+      'Upload your completed file to preview the CV, then print or export it as a PDF. In the print dialog, uncheck Headers and footers to remove the date, URL, title, and page numbers from the PDF.',
   },
 ] as const
 

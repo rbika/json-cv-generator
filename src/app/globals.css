@@ -144,7 +144,11 @@
 
 @media print {
   @page {
-    margin: 1.5cm;
+    size: a3;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    margin-left: 8rem;
+    margin-right: 8rem;
   }
 
   /* Everything hidden by default; opt in with .print-show */

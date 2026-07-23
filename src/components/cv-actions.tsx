@@ -5,6 +5,7 @@ import { useRef } from 'react'
 import { toast } from 'sonner'
 
 import { saveCV } from '@/utils/cv-store'
+import { parseCV } from '@/utils/parse-cv'
 import { Button } from './ui/button'
 import { Field, FieldLabel } from './ui/field'
 import {
@@ -41,14 +42,20 @@ function CVActions({ font, onFontChange }: CVActionsProps) {
     event.target.value = ''
     if (!file) return
 
-    const fileContent = await file.text()
-
-    try {
-      const data = JSON.parse(fileContent)
-      saveCV(data)
-    } catch {
-      toast.error('Invalid JSON file. Please try again.')
+    if (!file.name.endsWith('.json') && file.type !== 'application/json') {
+      toast.error('Unsupported file type. Please upload a JSON file.')
+      return
     }
+
+    const fileContent = await file.text()
+    const result = parseCV(fileContent)
+
+    if (!result.success) {
+      toast.error(result.error)
+      return
+    }
+
+    saveCV(result.data)
   }
 
   return (

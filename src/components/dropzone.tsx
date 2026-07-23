@@ -7,30 +7,37 @@ import { toast } from 'sonner'
 
 import { cn } from '@/utils/cn'
 import { saveCV } from '@/utils/cv-store'
+import { parseCV } from '@/utils/parse-cv'
 import { paths } from '@/utils/paths'
 
 function Dropzone() {
   const router = useRouter()
   const { getRootProps, getInputProps, isDragAccept, isDragReject } =
     useDropzone({
-      accept: { 'application/json': [] },
+      accept: { 'application/json': ['.json'] },
       multiple: false,
-      onDrop: handleDrop,
+      onDropAccepted: handleDropAccepted,
+      onDropRejected: handleDropRejected,
     })
 
-  async function handleDrop(acceptedFiles: File[]) {
+  async function handleDropAccepted(acceptedFiles: File[]) {
     const file = acceptedFiles[0]
     if (!file) return
 
     const fileContent = await file.text()
+    const result = parseCV(fileContent)
 
-    try {
-      const data = JSON.parse(fileContent)
-      saveCV(data)
-      router.push(paths.cv())
-    } catch {
-      toast.error('Invalid JSON file. Please try again.')
+    if (!result.success) {
+      toast.error(result.error)
+      return
     }
+
+    saveCV(result.data)
+    router.push(paths.cv())
+  }
+
+  function handleDropRejected() {
+    toast.error('Unsupported file type. Please upload a JSON file.')
   }
 
   return (

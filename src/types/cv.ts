@@ -1,77 +1,112 @@
-export interface BasicInfoItem {
-  label: string
-  url?: string
-}
+import { z } from 'zod'
 
-export interface BasicInfo {
-  name: string
-  jobTitle: string
-  email: string
-  phone?: string
-  location?: string
-  linkedin?: BasicInfoItem
-  github?: BasicInfoItem
-  website?: BasicInfoItem
-}
+const basicInfoItemSchema = z.object({
+  label: z.string(),
+  url: z.string().optional(),
+})
 
-export interface Summary {
-  sectionTitle: string
-  data: string
-}
+const basicInfoSchema = z.object({
+  name: z.string(),
+  jobTitle: z.string(),
+  email: z.string(),
+  phone: z.string().optional(),
+  location: z.string().optional(),
+  linkedin: basicInfoItemSchema.optional(),
+  github: basicInfoItemSchema.optional(),
+  website: basicInfoItemSchema.optional(),
+})
 
-export interface SkillItem {
-  category: string
-  skills: string[]
-}
+const summarySchema = z.object({
+  sectionTitle: z.string(),
+  data: z.string(),
+})
 
-export interface Skills {
-  sectionTitle: string
-  data: SkillItem[]
-}
+const skillItemSchema = z.object({
+  category: z.string(),
+  skills: z.array(z.string()),
+})
 
-export interface Experience {
-  sectionTitle: string
-  data: {
-    company: string
-    position: string
-    timePeriod: string
-    description: string
-    details: string[]
-  }[]
-}
+const skillsSchema = z.object({
+  sectionTitle: z.string(),
+  data: z.array(skillItemSchema),
+})
 
-export interface Education {
-  sectionTitle: string
-  data: {
-    institution: string
-    field: string
-    timePeriod: string
-  }[]
-}
+const experienceSchema = z.object({
+  sectionTitle: z.string(),
+  data: z.array(
+    z.object({
+      company: z.string(),
+      position: z.string(),
+      timePeriod: z.string(),
+      description: z.string().optional(),
+      details: z.array(z.string()).optional(),
+    }),
+  ),
+})
 
-export interface Certifications {
-  sectionTitle: string
-  data: {
-    course: string
-    institution: string
-    timePeriod: string
-  }[]
-}
+const educationSchema = z.object({
+  sectionTitle: z.string(),
+  data: z.array(
+    z.object({
+      institution: z.string(),
+      field: z.string(),
+      timePeriod: z.string(),
+    }),
+  ),
+})
 
-export interface Languages {
-  sectionTitle: string
-  data: {
-    language: string
-    proficiency: string
-  }[]
-}
+const certificationsSchema = z.object({
+  sectionTitle: z.string(),
+  data: z.array(
+    z.object({
+      course: z.string(),
+      institution: z.string(),
+      timePeriod: z.string(),
+    }),
+  ),
+})
 
-export interface CV {
-  basicInfo: BasicInfo
-  summary: Summary
-  skills: Skills
-  experience: Experience
-  education: Education
-  certifications?: Certifications
-  languages?: Languages
+const languagesSchema = z.object({
+  sectionTitle: z.string(),
+  data: z.array(
+    z.object({
+      language: z.string(),
+      proficiency: z.string(),
+    }),
+  ),
+})
+
+const cvSchema = z.object({
+  basicInfo: basicInfoSchema,
+  summary: summarySchema.optional(),
+  skills: skillsSchema.optional(),
+  experience: experienceSchema,
+  education: educationSchema.optional(),
+  certifications: certificationsSchema.optional(),
+  languages: languagesSchema.optional(),
+})
+
+type BasicInfoItem = z.infer<typeof basicInfoItemSchema>
+type BasicInfo = z.infer<typeof basicInfoSchema>
+type Summary = z.infer<typeof summarySchema>
+type SkillItem = z.infer<typeof skillItemSchema>
+type Skills = z.infer<typeof skillsSchema>
+type Experience = z.infer<typeof experienceSchema>
+type Education = z.infer<typeof educationSchema>
+type Certifications = z.infer<typeof certificationsSchema>
+type Languages = z.infer<typeof languagesSchema>
+type CV = z.infer<typeof cvSchema>
+
+export { cvSchema }
+export type {
+  BasicInfoItem,
+  BasicInfo,
+  Summary,
+  SkillItem,
+  Skills,
+  Experience,
+  Education,
+  Certifications,
+  Languages,
+  CV,
 }

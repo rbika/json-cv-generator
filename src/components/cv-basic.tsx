@@ -40,60 +40,74 @@ function CVBasic({ font }: CVBasicProps) {
           <div className="flex items-center gap-2">
             <RiMailLine className="size-5" /> {cv.basicInfo.email}
           </div>
-          <div className="flex items-center gap-2">
-            <RiSmartphoneLine className="size-5" /> {cv.basicInfo.phone}
-          </div>
-          <div className="flex items-center gap-2">
-            <RiMapPinLine className="size-5" /> {cv.basicInfo.location}
-          </div>
-          <a
-            href={cv.basicInfo.linkedin?.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2"
-          >
-            <RiLinkedinBoxFill className="size-5" />
-            {cv.basicInfo.linkedin?.label}
-          </a>
-          <a
-            href={cv.basicInfo.github?.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2"
-          >
-            <RiGithubFill className="size-5" />
-            {cv.basicInfo.github?.label}
-          </a>
-          <a
-            href={cv.basicInfo.website?.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2"
-          >
-            <RiGlobalLine className="size-5" />
-            {cv.basicInfo.website?.label}
-          </a>
+          {cv.basicInfo.phone ? (
+            <div className="flex items-center gap-2">
+              <RiSmartphoneLine className="size-5" /> {cv.basicInfo.phone}
+            </div>
+          ) : null}
+          {cv.basicInfo.location ? (
+            <div className="flex items-center gap-2">
+              <RiMapPinLine className="size-5" /> {cv.basicInfo.location}
+            </div>
+          ) : null}
+          {cv.basicInfo.linkedin ? (
+            <a
+              href={cv.basicInfo.linkedin?.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2"
+            >
+              <RiLinkedinBoxFill className="size-5" />
+              {cv.basicInfo.linkedin?.label}
+            </a>
+          ) : null}
+          {cv.basicInfo.github ? (
+            <a
+              href={cv.basicInfo.github?.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2"
+            >
+              <RiGithubFill className="size-5" />
+              {cv.basicInfo.github?.label}
+            </a>
+          ) : null}
+          {cv.basicInfo.website ? (
+            <a
+              href={cv.basicInfo.website?.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2"
+            >
+              <RiGlobalLine className="size-5" />
+              {cv.basicInfo.website?.label}
+            </a>
+          ) : null}
         </div>
       </section>
 
       {/* Summary */}
-      <section>
-        <div className={sectionTitleClasses}>{cv.summary.sectionTitle}</div>
-        <div className={sectionContentClasses}>{cv.summary.data}</div>
-      </section>
+      {cv.summary ? (
+        <section>
+          <div className={sectionTitleClasses}>{cv.summary.sectionTitle}</div>
+          <div className={sectionContentClasses}>{cv.summary.data}</div>
+        </section>
+      ) : null}
 
       {/* Skills */}
-      <section>
-        <div className={sectionTitleClasses}>{cv.skills.sectionTitle}</div>
-        <div className={cn(sectionContentClasses, 'flex flex-col gap-1')}>
-          {cv.skills.data.map((skill) => (
-            <div key={skill.category} className="flex gap-1">
-              <div className="font-semibold">{skill.category}: </div>
-              <div>{skill.skills.join(', ')}</div>
-            </div>
-          ))}
-        </div>
-      </section>
+      {cv.skills ? (
+        <section>
+          <div className={sectionTitleClasses}>{cv.skills.sectionTitle}</div>
+          <div className={cn(sectionContentClasses, 'flex flex-col gap-1')}>
+            {cv.skills.data.map((skill) => (
+              <div key={skill.category} className="flex gap-1">
+                <div className="font-semibold">{skill.category}: </div>
+                <div>{skill.skills.join(', ')}</div>
+              </div>
+            ))}
+          </div>
+        </section>
+      ) : null}
 
       {/* Experience */}
       <section>
@@ -109,63 +123,73 @@ function CVBasic({ font }: CVBasicProps) {
                 </div>
                 <div>{experience.timePeriod}</div>
               </div>
-              <div>{experience.description}</div>
-              <ul className="list-disc pl-4">
-                {experience.details.map((detail) => (
-                  <li key={detail}>{detail}</li>
-                ))}
-              </ul>
+              {experience.description ? (
+                <div>{experience.description}</div>
+              ) : null}
+              {experience.details?.length ? (
+                <ul className="list-disc pl-4">
+                  {experience.details.map((detail) => (
+                    <li key={detail}>{detail}</li>
+                  ))}
+                </ul>
+              ) : null}
             </div>
           ))}
         </div>
       </section>
 
       {/* Education */}
-      <section>
-        <div className={sectionTitleClasses}>{cv.education.sectionTitle}</div>
-        <div className={cn(sectionContentClasses, 'flex flex-col gap-1')}>
-          {cv.education.data.map((education) => (
-            <div key={education.institution}>
-              <div className="font-semibold">{education.institution}</div>
-              <div className="flex gap-1">
-                <div>{education.field},</div>
-                <div>{education.timePeriod}</div>
+      {cv.education ? (
+        <section>
+          <div className={sectionTitleClasses}>{cv.education.sectionTitle}</div>
+          <div className={cn(sectionContentClasses, 'flex flex-col gap-1')}>
+            {cv.education.data.map((education) => (
+              <div key={education.institution}>
+                <div className="font-semibold">{education.institution}</div>
+                <div className="flex gap-1">
+                  <div>{education.field},</div>
+                  <div>{education.timePeriod}</div>
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
-      </section>
+            ))}
+          </div>
+        </section>
+      ) : null}
 
       {/* Certifications */}
-      <section>
-        <div className={sectionTitleClasses}>
-          {cv.certifications?.sectionTitle}
-        </div>
-        <div className={cn(sectionContentClasses, 'flex flex-col gap-1')}>
-          {cv.certifications?.data.map((certification) => (
-            <div key={certification.course}>
-              <div className="font-semibold">{certification.course}</div>
-              <div className="flex gap-1">
-                <div>{certification.institution},</div>
-                <div>{certification.timePeriod}</div>
+      {cv.certifications ? (
+        <section>
+          <div className={sectionTitleClasses}>
+            {cv.certifications.sectionTitle}
+          </div>
+          <div className={cn(sectionContentClasses, 'flex flex-col gap-1')}>
+            {cv.certifications.data.map((certification) => (
+              <div key={certification.course}>
+                <div className="font-semibold">{certification.course}</div>
+                <div className="flex gap-1">
+                  <div>{certification.institution},</div>
+                  <div>{certification.timePeriod}</div>
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
-      </section>
+            ))}
+          </div>
+        </section>
+      ) : null}
 
       {/* Languages */}
-      <section>
-        <div className={sectionTitleClasses}>{cv.languages?.sectionTitle}</div>
-        <div className={cn(sectionContentClasses, 'flex flex-col gap-1')}>
-          {cv.languages?.data.map((language) => (
-            <div key={language.language} className="flex gap-1">
-              <div className="font-semibold">{language.language}: </div>
-              <div>{language.proficiency}</div>
-            </div>
-          ))}
-        </div>
-      </section>
+      {cv.languages ? (
+        <section>
+          <div className={sectionTitleClasses}>{cv.languages.sectionTitle}</div>
+          <div className={cn(sectionContentClasses, 'flex flex-col gap-1')}>
+            {cv.languages.data.map((language) => (
+              <div key={language.language} className="flex gap-1">
+                <div className="font-semibold">{language.language}: </div>
+                <div>{language.proficiency}</div>
+              </div>
+            ))}
+          </div>
+        </section>
+      ) : null}
     </div>
   )
 }
