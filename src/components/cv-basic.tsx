@@ -9,22 +9,34 @@ import {
 
 import { cn } from '@/utils/cn'
 import { useCV } from '@/utils/cv-store'
+import type { FontValue } from './cv-actions'
 
 const sectionTitleClasses = 'border-b border-gray-500 mb-2 text-lg'
 const sectionContentClasses = 'text-sm text-gray-700'
 
-function CVBasic() {
+const fontClasses: Record<FontValue, string> = {
+  inter: 'font-sans',
+  geist: 'font-geist',
+  'ibm-plex-sans': 'font-ibm-plex-sans',
+  lora: 'font-lora',
+}
+
+type CVBasicProps = {
+  font: FontValue
+}
+
+function CVBasic({ font }: CVBasicProps) {
   const cv = useCV()
 
   if (!cv) return null
 
   return (
-    <div className="flex flex-col gap-5">
+    <div className={cn('flex flex-col gap-5', fontClasses[font])}>
       {/* Basic info */}
       <section>
         <div className="text-3xl font-semibold">{cv.basicInfo.name}</div>
         <div className="mb-4 text-xl font-light">{cv.basicInfo.jobTitle}</div>
-        <div className={cn(sectionContentClasses, 'grid grid-cols-3 gap-2')}>
+        <div className={cn(sectionContentClasses, 'grid grid-cols-3 gap-2.5')}>
           <div className="flex items-center gap-2">
             <RiMailLine className="size-5" /> {cv.basicInfo.email}
           </div>

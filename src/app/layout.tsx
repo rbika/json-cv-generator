@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Geist, IBM_Plex_Sans, Inter, Lora } from 'next/font/google'
 
 import './globals.css'
 
@@ -8,6 +8,19 @@ import { Toaster } from '@/components/ui/sonner'
 import { cn } from '@/utils/cn'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' })
+const geist = Geist({ subsets: ['latin'], variable: '--font-geist' })
+const ibmPlexSans = IBM_Plex_Sans({
+  subsets: ['latin'],
+  variable: '--font-ibm-plex-sans',
+})
+const lora = Lora({ subsets: ['latin'], variable: '--font-lora' })
+
+const fontVariables = cn(
+  inter.variable,
+  geist.variable,
+  ibmPlexSans.variable,
+  lora.variable,
+)
 
 export const metadata: Metadata = {
   title: 'JSON CV Generator',
@@ -23,9 +36,9 @@ const RootLayout = ({
     <html
       lang="en"
       suppressHydrationWarning
-      className={cn('font-sans', inter.variable)}
+      className={cn('font-sans', fontVariables)}
     >
-      <body className={cn('font-sans antialiased', inter.variable)}>
+      <body className={cn('font-sans antialiased', fontVariables)}>
         <Header />
         <main className="my-12 pt-px font-sans">{children}</main>
         <Toaster />
