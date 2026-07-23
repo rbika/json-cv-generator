@@ -1,9 +1,8 @@
 import Link from 'next/link'
 
-import { BracesIcon } from 'lucide-react'
+import { RiBracesLine, RiGithubFill } from '@remixicon/react'
 
 import { Container } from '@/components/container'
-import { GithubIcon } from '@/components/icons/github-icon'
 import { paths } from '@/utils/paths'
 
 const Header = () => {
@@ -12,7 +11,7 @@ const Header = () => {
       <Container className="flex h-full items-center">
         <div className="flex w-full items-center justify-between gap-2">
           <Link href={paths.home()} className="flex items-center gap-2">
-            <BracesIcon className="size-6" />
+            <RiBracesLine className="size-6" />
             <span className="text-xl font-bold">CV Generator</span>
           </Link>
 
@@ -22,7 +21,7 @@ const Header = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <GithubIcon className="size-5" />
+              <RiGithubFill className="size-6" />
             </Link>
           </div>
         </div>

@@ -1,9 +1,14 @@
-import { GlobeIcon, MailIcon, MapPinIcon, SmartphoneIcon } from 'lucide-react'
+import {
+  RiGithubFill,
+  RiGlobalLine,
+  RiLinkedinBoxFill,
+  RiMailLine,
+  RiMapPinLine,
+  RiSmartphoneLine,
+} from '@remixicon/react'
 
 import { cn } from '@/utils/cn'
 import { useCV } from '@/utils/cv-store'
-import { GithubIcon } from './icons/github-icon'
-import { LinkedinIcon } from './icons/linkedin-icon'
 
 const sectionTitleClasses = 'border-b border-gray-500 mb-2 text-lg'
 const sectionContentClasses = 'text-sm dark:text-gray-300 text-gray-700'
@@ -21,13 +26,13 @@ function CVBasic() {
         <div className="mb-4 text-xl font-light">{cv.basicInfo.jobTitle}</div>
         <div className={cn(sectionContentClasses, 'grid grid-cols-3 gap-2')}>
           <div className="flex items-center gap-2">
-            <MailIcon className="size-4" /> {cv.basicInfo.email}
+            <RiMailLine className="size-5" /> {cv.basicInfo.email}
           </div>
           <div className="flex items-center gap-2">
-            <SmartphoneIcon className="size-4" /> {cv.basicInfo.phone}
+            <RiSmartphoneLine className="size-5" /> {cv.basicInfo.phone}
           </div>
           <div className="flex items-center gap-2">
-            <MapPinIcon className="size-4" /> {cv.basicInfo.location}
+            <RiMapPinLine className="size-5" /> {cv.basicInfo.location}
           </div>
           <a
             href={cv.basicInfo.linkedin?.url}
@@ -35,7 +40,7 @@ function CVBasic() {
             rel="noopener noreferrer"
             className="flex items-center gap-2"
           >
-            <LinkedinIcon className="size-5" />
+            <RiLinkedinBoxFill className="size-5" />
             {cv.basicInfo.linkedin?.label}
           </a>
           <a
@@ -44,7 +49,7 @@ function CVBasic() {
             rel="noopener noreferrer"
             className="flex items-center gap-2"
           >
-            <GithubIcon className="size-5" />
+            <RiGithubFill className="size-5" />
             {cv.basicInfo.github?.label}
           </a>
           <a
@@ -53,7 +58,7 @@ function CVBasic() {
             rel="noopener noreferrer"
             className="flex items-center gap-2"
           >
-            <GlobeIcon className="size-4" />
+            <RiGlobalLine className="size-5" />
             {cv.basicInfo.website?.label}
           </a>
         </div>

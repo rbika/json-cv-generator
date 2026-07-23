@@ -21,7 +21,11 @@ const RootLayout = ({
   children: React.ReactNode
 }>) => {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={cn('font-sans', inter.variable)}
+    >
       <body className={cn('font-sans antialiased', inter.variable)}>
         <ThemeProvider
           attribute="class"
