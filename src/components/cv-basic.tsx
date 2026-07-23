@@ -31,7 +31,7 @@ function CVBasic({ font }: CVBasicProps) {
   if (!cv) return null
 
   return (
-    <div className={cn('flex flex-col gap-5', fontClasses[font])}>
+    <div className={cn('print-show flex flex-col gap-5', fontClasses[font])}>
       {/* Basic info */}
       <section>
         <div className="text-3xl font-semibold">{cv.basicInfo.name}</div>

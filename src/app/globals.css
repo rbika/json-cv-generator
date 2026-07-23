@@ -141,3 +141,26 @@
     @apply font-sans;
   }
 }
+
+@media print {
+  @page {
+    margin: 1.5cm;
+  }
+
+  /* Everything hidden by default; opt in with .print-show */
+  body * {
+    visibility: hidden;
+  }
+
+  .print-show,
+  .print-show * {
+    visibility: visible;
+  }
+
+  .print-show {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+}
