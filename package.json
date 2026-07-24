@@ -7,6 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "tsc --noEmit && eslint --fix",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "format": "prettier --write .",
     "prepare": "sh .simple-git-hooks/simple-git-hooks.sh"
   },
@@ -40,6 +42,7 @@
     "prettier-plugin-tailwindcss": "^0.7.2",
     "simple-git-hooks": "^2.13.1",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest": "^4.1.10"
   }
 }

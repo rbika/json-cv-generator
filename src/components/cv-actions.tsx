@@ -13,7 +13,6 @@ import {
   SelectContent,
   SelectGroup,
   SelectItem,
-  SelectLabel,
   SelectTrigger,
   SelectValue,
 } from './ui/select'
@@ -75,9 +74,8 @@ function CVActions({ font, onFontChange }: CVActionsProps) {
             <SelectTrigger>
               <SelectValue />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent alignItemWithTrigger={false}>
               <SelectGroup>
-                <SelectLabel>Fonts</SelectLabel>
                 {fontItems.map((item) => (
                   <SelectItem key={item.value} value={item.value}>
                     {item.label}
