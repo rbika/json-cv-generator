@@ -99,8 +99,8 @@ function CVBasic({ font }: CVBasicProps) {
         <section>
           <div className={sectionTitleClasses}>{cv.skills.sectionTitle}</div>
           <div className={cn(sectionContentClasses, 'flex flex-col gap-1')}>
-            {cv.skills.data.map((skill) => (
-              <div key={skill.category} className="flex gap-1">
+            {cv.skills.data.map((skill, index) => (
+              <div key={index} className="flex gap-1">
                 <div className="font-semibold">{skill.category}: </div>
                 <div>{skill.skills.join(', ')}</div>
               </div>
@@ -113,8 +113,8 @@ function CVBasic({ font }: CVBasicProps) {
       <section>
         <div className={sectionTitleClasses}>{cv.experience.sectionTitle}</div>
         <div className={cn(sectionContentClasses, 'flex flex-col gap-2')}>
-          {cv.experience.data.map((experience) => (
-            <div key={experience.company} className="flex flex-col gap-1">
+          {cv.experience.data.map((experience, index) => (
+            <div key={index} className="flex flex-col gap-1">
               <div className="flex items-center gap-4">
                 <div className="flex items-center gap-2 font-semibold">
                   <div>{experience.company}</div>
@@ -128,8 +128,8 @@ function CVBasic({ font }: CVBasicProps) {
               ) : null}
               {experience.details?.length ? (
                 <ul className="list-disc pl-4">
-                  {experience.details.map((detail) => (
-                    <li key={detail}>{detail}</li>
+                  {experience.details.map((detail, detailIndex) => (
+                    <li key={detailIndex}>{detail}</li>
                   ))}
                 </ul>
               ) : null}
@@ -143,8 +143,8 @@ function CVBasic({ font }: CVBasicProps) {
         <section>
           <div className={sectionTitleClasses}>{cv.education.sectionTitle}</div>
           <div className={cn(sectionContentClasses, 'flex flex-col gap-1')}>
-            {cv.education.data.map((education) => (
-              <div key={education.institution}>
+            {cv.education.data.map((education, index) => (
+              <div key={index}>
                 <div className="font-semibold">{education.institution}</div>
                 <div className="flex gap-1">
                   <div>{education.field},</div>
@@ -163,8 +163,8 @@ function CVBasic({ font }: CVBasicProps) {
             {cv.certifications.sectionTitle}
           </div>
           <div className={cn(sectionContentClasses, 'flex flex-col gap-1')}>
-            {cv.certifications.data.map((certification) => (
-              <div key={certification.course}>
+            {cv.certifications.data.map((certification, index) => (
+              <div key={index}>
                 <div className="font-semibold">{certification.course}</div>
                 <div className="flex gap-1">
                   <div>{certification.institution},</div>
@@ -181,8 +181,8 @@ function CVBasic({ font }: CVBasicProps) {
         <section>
           <div className={sectionTitleClasses}>{cv.languages.sectionTitle}</div>
           <div className={cn(sectionContentClasses, 'flex flex-col gap-1')}>
-            {cv.languages.data.map((language) => (
-              <div key={language.language} className="flex gap-1">
+            {cv.languages.data.map((language, index) => (
+              <div key={index} className="flex gap-1">
                 <div className="font-semibold">{language.language}: </div>
                 <div>{language.proficiency}</div>
               </div>
