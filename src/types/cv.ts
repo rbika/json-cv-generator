@@ -2,13 +2,13 @@ import { z } from 'zod'
 
 const basicInfoItemSchema = z.object({
   label: z.string(),
-  url: z.string().optional(),
+  url: z.url({ protocol: /^https?$/ }).optional(),
 })
 
 const basicInfoSchema = z.object({
   name: z.string(),
   jobTitle: z.string(),
-  email: z.string(),
+  email: z.email(),
   phone: z.string().optional(),
   location: z.string().optional(),
   linkedin: basicInfoItemSchema.optional(),

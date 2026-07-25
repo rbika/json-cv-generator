@@ -85,4 +85,56 @@ describe('parseCV', () => {
       expect(result.error.length).toBeGreaterThan(0)
     }
   })
+
+  it('rejects a javascript: URL in basicInfo.linkedin.url', () => {
+    const input = {
+      basicInfo: {
+        name: 'Jane Doe',
+        jobTitle: 'Engineer',
+        email: 'jane@example.com',
+        linkedin: {
+          label: 'LinkedIn',
+          url: 'javascript:alert(1)',
+        },
+      },
+      experience: {
+        sectionTitle: 'Experience',
+        data: [
+          {
+            company: 'Acme',
+            position: 'Developer',
+            timePeriod: '2020 - Present',
+          },
+        ],
+      },
+    }
+
+    const result = parseCV(JSON.stringify(input))
+
+    expect(result.success).toBe(false)
+  })
+
+  it('rejects an invalid email', () => {
+    const input = {
+      basicInfo: {
+        name: 'Jane Doe',
+        jobTitle: 'Engineer',
+        email: 'not-an-email',
+      },
+      experience: {
+        sectionTitle: 'Experience',
+        data: [
+          {
+            company: 'Acme',
+            position: 'Developer',
+            timePeriod: '2020 - Present',
+          },
+        ],
+      },
+    }
+
+    const result = parseCV(JSON.stringify(input))
+
+    expect(result.success).toBe(false)
+  })
 })
