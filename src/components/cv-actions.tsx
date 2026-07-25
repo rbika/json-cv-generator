@@ -98,7 +98,7 @@ function CVActions({ font, onFontChange }: CVActionsProps) {
         <Button variant="outline" onClick={() => inputRef.current?.click()}>
           Upload new file
         </Button>
-        <Button variant="outline" onClick={window.print}>
+        <Button variant="outline" onClick={() => window.print()}>
           Save as PDF
         </Button>
       </div>
