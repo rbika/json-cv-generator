@@ -44,6 +44,6 @@
     "simple-git-hooks": "^2.13.1",
     "tailwindcss": "^4",
     "typescript": "^5",
-    "vitest": "^4.1.10"
+    "vitest": "^4.1.12"
   }
 }
